@@ -5,7 +5,7 @@
   "author": "Jaan Toming <jtoming@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "./build.sh",
+    "build": "./scripts/build.sh",
     "start": "node service/dist/main",
     "start:prod": "node service/dist/main"
   }

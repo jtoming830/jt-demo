@@ -1,10 +1,39 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
-@Entity('main')
-export class Movie {
-  @PrimaryColumn()
-  id: string;
-
+export class MovieEditable {
   @Column()
   title: string;
+
+  @Column()
+  image: string;
+
+  @Column()
+  score: number;
+
+  @Column()
+  description: string;
+
+  @Column()
+  comment: string;
+
+  @Column()
+  year: number;
+}
+
+@Entity('main')
+export class Movie extends MovieEditable {
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
+
+  @CreateDateColumn()
+  createdAt: Date;
 }

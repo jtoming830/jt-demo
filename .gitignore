@@ -12,7 +12,7 @@
 **/build
 **/dist
 
-service/client
+service/clients
 
 # misc
 **/.DS_Store
