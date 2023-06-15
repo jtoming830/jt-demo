@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "repository": "https://github.com/jtoming830/jt-demo.git",
   "author": "Jaan Toming <jtoming@gmail.com>",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "scripts": {
     "build": "./build.sh",
     "start": "node service/dist/main",
