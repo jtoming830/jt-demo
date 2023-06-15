@@ -5,5 +5,3 @@ yarn --cwd client install
 yarn --cwd client build
 
 cp -r client/build service/client
-
-yarn start
