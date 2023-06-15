@@ -1,11 +1,13 @@
 import { Table as AntdTable } from 'antd'
 import { columns } from './columns'
 
-export function Table() {
+export function Table({ movies }) {
   return (
     <AntdTable
       columns={columns}
-      dataSource={[]}
+      dataSource={movies}
+      loading={!movies}
+      rowKey="id"
     />
   )
 }
