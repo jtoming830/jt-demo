@@ -6,7 +6,6 @@
   "license": "MIT",
   "scripts": {
     "build": "./build.sh",
-    "install": "yarn --cwd service install",
     "start": "node service/dist/main",
     "start:prod": "node service/dist/main"
   }
