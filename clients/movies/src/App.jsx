@@ -1,7 +1,12 @@
-import './App.css'
+import { Layout } from './components'
+import { MoviesRates } from './pages/MoviesRates'
 
 function App() {
-  return <div>MOVIES</div>
+  return (
+    <Layout>
+      <MoviesRates />
+    </Layout>
+  )
 }
 
 export default App

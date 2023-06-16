@@ -10,7 +10,7 @@ import {
 import { MoviesService } from './service';
 import { MovieEditable } from './entity';
 
-@Controller('movies')
+@Controller('movies/api')
 export class MoviesController {
   constructor(private readonly moviesService: MoviesService) {}
 

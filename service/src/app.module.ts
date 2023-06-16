@@ -3,22 +3,17 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { MoviesModule } from './movies/module';
 
-console.log(join(__dirname, '..', 'client'));
+const serveStatic = (folder: string, isRoot = false) =>
+  ServeStaticModule.forRoot({
+    rootPath: join(__dirname, '..', `clients/${folder}`),
+    serveRoot: isRoot ? '/' : `/${folder}`,
+  });
 
 @Module({
   imports: [
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'clients/cv'),
-      serveRoot: '/cv',
-    }),
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'clients/movies'),
-      serveRoot: '/moviesrates',
-    }),
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'clients/sample_landing'),
-      serveRoot: '/sample_landing',
-    }),
+    serveStatic('cv', true),
+    serveStatic('movies'),
+    serveStatic('sample_landing'),
     MoviesModule,
   ],
   controllers: [],
