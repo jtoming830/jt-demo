@@ -1,9 +1,9 @@
 {
-  "name": "jt-demo",
+  "name": "cv",
   "version": "0.1.0",
   "private": true,
   "license": "UNLICENSED",
-  "homepage": "/",
+  "homepage": "/cv",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

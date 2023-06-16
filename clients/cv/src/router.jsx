@@ -1,15 +1,16 @@
 import { createBrowserRouter } from 'react-router-dom'
 import { Layout } from './components'
+import { DemoGallery, About } from './pages'
 
 const routes = [
   {
     path: '/',
-    lazy: () => import('./pages/About'),
+    Component: About,
     label: 'About me'
   },
   {
     path: '/demos',
-    lazy: () => import('./pages/DemoGallery'),
+    Component: DemoGallery,
     label: 'Demo Gallery'
   }
 ]
@@ -24,4 +25,5 @@ export const router = createBrowserRouter(
   ],
   { basename: '/cv' }
 )
+
 export const routeItems = routes.map(({ path, label }) => ({ key: path, label }))

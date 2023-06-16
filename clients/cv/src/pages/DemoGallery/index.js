@@ -1,1 +1,1 @@
-export { default as Component } from './DemoGallery'
+export { default as DemoGallery } from './DemoGallery'
