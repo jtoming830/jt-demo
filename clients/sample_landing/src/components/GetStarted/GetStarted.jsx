@@ -15,8 +15,8 @@ const Button = styled.div`
   background-color: var(--button-bg);
   box-shadow: 0 15px 15px -10px var(--button-shadow-color);
 
+  cursor: pointer;
   &:hover {
-    cursor: pointer;
     background-color: var(--button-hovered-bg);
   }
 `

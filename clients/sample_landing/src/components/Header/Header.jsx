@@ -25,8 +25,8 @@ const Item = styled.span`
   font-size: 13px;
   color: var(--menu-item-color);
 
+  cursor: pointer;
   &:hover {
-    cursor: pointer;
     color: var(--menu-item-hovered-color);
   }
 `

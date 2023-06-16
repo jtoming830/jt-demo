@@ -27,9 +27,9 @@ const IconsContainer = styled.div`
 
   svg {
     color: var(--footer-text-color);
+    cursor: pointer;
 
     &:hover {
-      cursor: pointer;
       color: var(--footer-text-hovered-color);
     }
   }
@@ -54,9 +54,9 @@ const Item = styled.div`
   width: fit-content;
 
   color: var(--footer-text-color);
+  cursor: pointer;
 
   &:hover {
-    cursor: pointer;
     color: var(--footer-text-hovered-color);
   }
 `
