@@ -2,21 +2,22 @@ import { Module } from '@nestjs/common';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { MoviesModule } from './movies/module';
+import { AppController } from './app.controller';
 
-const serveStatic = (folder: string, isRoot = false) =>
+const serveStatic = (folder: string) =>
   ServeStaticModule.forRoot({
     rootPath: join(__dirname, '..', `clients/${folder}`),
-    serveRoot: isRoot ? '/' : `/${folder}`,
+    serveRoot: `/${folder}`,
   });
 
 @Module({
   imports: [
-    serveStatic('cv', true),
+    serveStatic('cv'),
     serveStatic('movies'),
     serveStatic('sample_landing'),
     MoviesModule,
   ],
-  controllers: [],
+  controllers: [AppController],
   providers: [],
 })
 export class AppModule {}
