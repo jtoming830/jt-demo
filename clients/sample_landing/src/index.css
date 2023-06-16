@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  overflow-x: hidden;
   font-family: 'Be Vietnam Pro', serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
