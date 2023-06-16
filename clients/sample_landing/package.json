@@ -9,14 +9,17 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --ext .js,.jsx src",
-    "analyze": "npx source-map-explorer build/static/js/*.js"
+    "analyze": "npx source-map-explorer build/static/js/*.js",
+    "prepare-svg": "npx @svgr/cli --ext jsx --out-dir ./src/icons -- ./icons"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "styled-components": "^6.0.0-rc.3"
   },
   "devDependencies": {
+    "@svgr/cli": "^8.0.1",
     "eslint": "^7.32.0 || ^8.2.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.25.3",
