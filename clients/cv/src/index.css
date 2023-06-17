@@ -17,8 +17,7 @@ body {
 
 #root {
   min-height: 100vh;
-  background: url('./images/bg.jpg') no-repeat;
-  background-size: cover;
+  background: url('./images/bg.jpg');
 }
 
 .fadeIn {
