@@ -2,6 +2,7 @@ import { styled } from 'styled-components'
 import linkedinImg from '../../images/linkedin.png'
 import githubImg from '../../images/github.png'
 import tgImg from '../../images/telegram.png'
+import whatsappImg from '../../images/whatsapp.png'
 import { routes } from '../../router'
 import { Link, useLocation } from 'react-router-dom'
 import { Home, Mail } from '../icons'
@@ -107,8 +108,12 @@ const MailLink = styled.a`
 
 const socials = [
   {
-    link: 'https://jtoming830.t.me/',
+    link: 'https://jtoming.t.me/',
     img: tgImg
+  },
+  {
+    link: 'https://wa.me/37258139096',
+    img: whatsappImg
   },
   {
     link: 'https://github.com/jtoming830/jt-demo',
