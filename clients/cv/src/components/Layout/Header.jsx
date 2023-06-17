@@ -1,6 +1,7 @@
 import { styled } from 'styled-components'
 import linkedinImg from '../../images/linkedin.png'
 import githubImg from '../../images/github.png'
+import tgImg from '../../images/telegram.png'
 import { routes } from '../../router'
 import { Link, useLocation } from 'react-router-dom'
 import { Home, Mail } from '../icons'
@@ -104,8 +105,20 @@ const MailLink = styled.a`
   margin: auto;
 `
 
-const linkedinUrl = 'https://www.linkedin.com/in/jtoming'
-const githubUrl = 'https://github.com/jtoming830/jt-demo'
+const socials = [
+  {
+    link: 'https://jtoming830.t.me/',
+    img: tgImg
+  },
+  {
+    link: 'https://github.com/jtoming830/jt-demo',
+    img: githubImg
+  },
+  {
+    link: 'https://www.linkedin.com/in/jtoming',
+    img: linkedinImg
+  }
+]
 
 export function Header() {
   const location = useLocation()
@@ -139,24 +152,18 @@ export function Header() {
       </LeftContainer>
       <RightContainer>
         <Socials>
-          <SocialLink
-            target="_blank"
-            href={githubUrl}
-          >
-            <img
-              height={20}
-              src={githubImg}
-            />
-          </SocialLink>
-          <SocialLink
-            target="_blank"
-            href={linkedinUrl}
-          >
-            <img
-              height={20}
-              src={linkedinImg}
-            />
-          </SocialLink>
+          {socials.map(({ link, img }) => (
+            <SocialLink
+              target="_blank"
+              href={link}
+              key={link}
+            >
+              <img
+                height={20}
+                src={img}
+              />
+            </SocialLink>
+          ))}
         </Socials>
         <MailLink href="mailto:jtoming@gmail.com">
           <Button>
