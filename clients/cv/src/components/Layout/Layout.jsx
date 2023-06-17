@@ -7,14 +7,29 @@ import { useEffect, useState } from 'react'
 
 const Container = styled.div`
   display: flex;
-  margin: auto;
   padding: 60px 0;
   width: fit-content;
   gap: 30px;
+
+  margin: auto;
+  @media only screen and (max-width: 1300px) {
+    margin: 0 60px;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    margin: 0 auto;
+    gap: 10px;
+    flex-direction: column;
+    max-width: 700px;
+  }
+
+  @media only screen and (max-width: 720px) {
+    margin: 0 10px;
+  }
 `
 
 const RightContainer = styled.div`
-  width: 800px;
+  max-width: 800px;
   flex-grow: 1;
 `
 

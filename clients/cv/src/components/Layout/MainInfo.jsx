@@ -52,11 +52,23 @@ const StyledList = styled(List)`
       position: absolute;
     }
   }
+
+  @media only screen and (max-width: 1000px) {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+  }
 `
 
 const Image = styled.img`
   margin-top: 10px;
   border-radius: 10px;
+  height: 400px;
+
+  @media only screen and (max-width: 1000px) {
+    height: unset;
+    width: 100%;
+  }
 `
 
 export function MainInfo() {
@@ -67,10 +79,7 @@ export function MainInfo() {
       <Name>Jaan Toming</Name>
       <SubText>Frontend Developer</SubText>
       <br />
-      <Image
-        height={400}
-        src={photo}
-      />
+      <Image src={photo} />
       <StyledList>
         <li />
         <li>
