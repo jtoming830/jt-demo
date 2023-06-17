@@ -67,7 +67,8 @@ const Image = styled.img`
 
   @media only screen and (max-width: 1000px) {
     height: unset;
-    width: 100%;
+    width: 60%;
+    margin-left: 20%;
   }
 `
 
