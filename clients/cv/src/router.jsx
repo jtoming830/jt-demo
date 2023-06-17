@@ -1,29 +1,28 @@
-import { createBrowserRouter } from 'react-router-dom'
-import { Layout } from './components'
-import { DemoGallery, About } from './pages'
+import { About, Resume, Portfolio, Contacts } from './pages'
 
-const routes = [
+export const routes = [
   {
-    path: '/',
+    path: '/cv/',
     Component: About,
-    label: 'About me'
+    home: true,
+    key: 'root'
   },
   {
-    path: '/demos',
-    Component: DemoGallery,
-    label: 'Demo Gallery'
+    path: '/cv/resume',
+    Component: Resume,
+    label: 'Resume',
+    key: 'resume'
+  },
+  {
+    path: '/cv/portfolio',
+    Component: Portfolio,
+    label: 'Portfolio',
+    key: 'portfolio'
+  },
+  {
+    path: '/cv/contacts',
+    Component: Contacts,
+    label: 'Contacts',
+    key: 'contacts'
   }
 ]
-
-export const router = createBrowserRouter(
-  [
-    {
-      path: '/',
-      Component: Layout,
-      children: routes
-    }
-  ],
-  { basename: '/cv' }
-)
-
-export const routeItems = routes.map(({ path, label }) => ({ key: path, label }))

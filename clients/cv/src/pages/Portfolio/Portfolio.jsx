@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-export default function DemoGallery() {
+export default function Portfolio() {
   const { origin } = document.location
 
   return (

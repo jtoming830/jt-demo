@@ -1,11 +1,48 @@
 body {
   margin: 0;
-  font-family: 'Be Vietnam Pro', serif;
+  font-family: 'Roboto', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
+  min-height: 100vh;
+
+  --brand-color: #ff8317;
+  --brand-color-2: #e66400;
+  --primary-text-color: #000000;
+  --secondary-text-color: #989898;
+
+  --shadow: 0 0 20px 0px black;
+
+  color: var(--primary-text-color);
 }
 
 #root {
-  height: 100vh;
+  min-height: 100vh;
+  background: url('./images/bg.jpg') no-repeat;
+  background-size: cover;
+}
+
+.fadeIn {
+  animation: 1s fadeIn forwards;
+}
+
+.fadeOut {
+  animation: 0.5s fadeOut forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

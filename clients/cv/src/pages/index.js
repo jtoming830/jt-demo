@@ -1,2 +1,4 @@
 export * from './About'
-export * from './DemoGallery'
+export * from './Portfolio'
+export * from './Resume'
+export * from './Contacts'

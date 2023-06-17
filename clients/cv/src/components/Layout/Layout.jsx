@@ -1,35 +1,64 @@
-import { Layout as AntdLayout } from 'antd'
-import { styled } from 'styled-components'
+import styled from 'styled-components'
 import { Header } from './Header'
-import { Footer } from './Footer'
-import { Outlet } from 'react-router-dom'
+import { MainInfo } from './MainInfo'
+import { Route, Routes, useLocation } from 'react-router-dom'
+import { routes } from '../../router'
+import { useEffect, useState } from 'react'
 
-const StyledLayout = styled(AntdLayout)`
-  height: 100vh;
+const Container = styled.div`
+  display: flex;
+  margin: auto;
+  padding: 60px 0;
+  width: fit-content;
+  gap: 30px;
 `
 
-const ScrollableContainer = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
+const RightContainer = styled.div`
+  width: 800px;
+  flex-grow: 1;
 `
 
 const Content = styled.div`
-  flex: 1;
-  padding: 20px 50px 0;
+  margin-top: 10px;
+  padding: 45px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: var(--shadow);
 `
 
 export function Layout() {
+  const location = useLocation()
+
+  const [displayLocation, setDisplayLocation] = useState(location)
+  const [transitionStage, setTransistionStage] = useState('fadeIn')
+
+  useEffect(() => {
+    if (location.pathname !== displayLocation.pathname) {
+      setTransistionStage('fadeOut')
+    }
+  }, [location, displayLocation])
+
   return (
-    <StyledLayout>
-      <Header />
-      <ScrollableContainer>
-        <Content>
-          <Outlet />
+    <Container>
+      <MainInfo />
+      <RightContainer>
+        <Header />
+        <Content
+          className={`${transitionStage}`}
+          onAnimationEnd={() => {
+            if (transitionStage === 'fadeOut') {
+              setTransistionStage('fadeIn')
+              setDisplayLocation(location)
+            }
+          }}
+        >
+          <Routes location={displayLocation}>
+            {routes.map((props) => (
+              <Route {...props} />
+            ))}
+          </Routes>
         </Content>
-        <Footer />
-      </ScrollableContainer>
-    </StyledLayout>
+      </RightContainer>
+    </Container>
   )
 }
