@@ -91,6 +91,10 @@ const MailContainer = styled.div`
 const MailLink = styled.a`
   text-decoration: none;
   margin: auto;
+
+  @media only screen and (max-width: 400px) {
+    display: none;
+  }
 `
 
 export function Header() {
