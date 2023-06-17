@@ -9,6 +9,7 @@ const Container = styled.div`
   background: white;
   border-radius: 10px;
   box-shadow: var(--shadow);
+  height: fit-content;
 `
 
 const Name = styled.div`

@@ -8,14 +8,14 @@ const Container = styled.div`
 `
 
 const Content = styled.div`
-  margin-top: 30px;
+  margin-top: ${(props) => (props.$hasTitle ? '30px' : 'none')};
 `
 
 export function Section({ title, children }) {
   return (
     <Container>
       <Title>{title}</Title>
-      <Content>{children}</Content>
+      <Content $hasTitle={!!title}>{children}</Content>
     </Container>
   )
 }

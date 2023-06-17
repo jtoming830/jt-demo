@@ -20,9 +20,9 @@ const Text = styled.div`
   font-weight: 600;
 `
 
-export function Title({ children }) {
+export function Title({ children, ...props }) {
   return (
-    <Container>
+    <Container {...props}>
       <Underline />
       <Text>{children}</Text>
     </Container>
