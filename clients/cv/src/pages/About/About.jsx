@@ -2,6 +2,11 @@ import { styled } from 'styled-components'
 import { Section } from '../../components'
 import { getExperience } from '../../utils'
 
+const SkillsContainer = styled.div`
+  margin-left: -10px;
+  margin-top: -6px;
+`
+
 const Badge = styled.span`
   border: 1px solid var(--brand-color);
   border-radius: 50px;
@@ -36,9 +41,11 @@ export default function About() {
         </p>
       </Section>
       <Section title="Skills">
-        {SKILLS.map((skill) => (
-          <Badge key={skill}>{skill}</Badge>
-        ))}
+        <SkillsContainer>
+          {SKILLS.map((skill) => (
+            <Badge key={skill}>{skill}</Badge>
+          ))}
+        </SkillsContainer>
       </Section>
     </>
   )
