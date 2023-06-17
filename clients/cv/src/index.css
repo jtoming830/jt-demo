@@ -6,11 +6,16 @@ body {
   min-height: 100vh;
 
   --brand-color: #ff8317;
-  --brand-color-2: #e66400;
+  --brand-light-color: #fcac66;
+  --brand-dark-color: #e66400;
+
   --primary-text-color: #000000;
   --secondary-text-color: #989898;
 
-  --shadow: 0 0 20px 0px black;
+  --bg-color: #ffffff;
+  --popup-bg-color: #fdfdfd;
+
+  --shadow: 0 0 20px 0px var(--primary-text-color);
 
   color: var(--primary-text-color);
 }

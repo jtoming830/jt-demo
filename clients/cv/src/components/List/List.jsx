@@ -18,7 +18,7 @@ export const List = styled.ul`
       border: 2px solid var(--brand-color);
       margin-top: 1px;
       margin-left: -27px;
-      background: white;
+      background: var(--bg-color);
     }
 
     &:last-child {

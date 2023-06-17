@@ -6,7 +6,7 @@ import { getExperience } from '../../utils'
 
 const Container = styled.div`
   padding: 20px;
-  background: white;
+  background: var(--bg-color);
   border-radius: 10px;
   box-shadow: var(--shadow);
   height: fit-content;

@@ -1,20 +1,20 @@
 import { styled } from 'styled-components'
-import linkedinImg from '../../images/linkedin.png'
-import githubImg from '../../images/github.png'
-import tgImg from '../../images/telegram.png'
-import whatsappImg from '../../images/whatsapp.png'
 import { routes } from '../../router'
 import { Link, useLocation } from 'react-router-dom'
 import { Home, Mail } from '../icons'
 import { Button } from '../Button'
+import { Socials } from './Socials'
+import { MobileMenu } from './MobileMenu'
 
 const Container = styled.div`
   height: 70px;
   display: flex;
   justify-content: space-between;
-  background: white;
+  background: var(--bg-color);
   border-radius: 10px;
   box-shadow: var(--shadow);
+  position: relative;
+  z-index: 1;
 `
 
 const Menu = styled.div`
@@ -22,6 +22,10 @@ const Menu = styled.div`
 
   a + a {
     margin-left: 20px;
+  }
+
+  @media only screen and (max-width: 499px) {
+    display: none;
   }
 `
 
@@ -31,7 +35,7 @@ const StyledLink = styled(Link)`
   font-size: 14px;
   text-transform: uppercase;
   text-decoration: none;
-  color: black;
+  color: var(--primary-text-color);
   cursor: pointer;
   transition: color 0.5s ease;
 
@@ -41,37 +45,21 @@ const StyledLink = styled(Link)`
   }
 `
 
-const Socials = styled.div`
-  margin: auto 10px auto 0;
-  display: flex;
-`
-
-const SocialLink = styled.a`
-  display: block;
-  height: 20px;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.2);
-  }
-
-  & + & {
-    margin-left: 10px;
-  }
-`
-
 const LeftContainer = styled.div`
   display: flex;
 `
 
 const RightContainer = styled.div`
   display: flex;
-  margin-right: 20px;
+
+  @media only screen and (min-width: 500px) {
+    margin-right: 20px;
+  }
 `
 
 const HomeContainer = styled(Link)`
   background-color: var(--brand-color);
-  color: black;
+  color: var(--primary-text-color);
   border-radius: 10px 0 0 10px;
   display: flex;
   align-items: center;
@@ -79,9 +67,8 @@ const HomeContainer = styled(Link)`
   width: 70px;
 
   transition: background-color 0.5s ease;
-
   &:hover {
-    background-color: var(--brand-color-2);
+    background-color: var(--brand-dark-color);
   }
 `
 
@@ -90,7 +77,7 @@ const MailContainer = styled.div`
   width: 24px;
   display: flex;
   margin: auto;
-  background: white;
+  background: var(--bg-color);
   border-radius: 50%;
   margin-left: 10px;
   margin-right: -10px;
@@ -105,25 +92,6 @@ const MailLink = styled.a`
   text-decoration: none;
   margin: auto;
 `
-
-const socials = [
-  {
-    link: 'https://jtoming.t.me/',
-    img: tgImg
-  },
-  {
-    link: 'https://wa.me/37258139096',
-    img: whatsappImg
-  },
-  {
-    link: 'https://github.com/jtoming830/jt-demo',
-    img: githubImg
-  },
-  {
-    link: 'https://www.linkedin.com/in/jtoming',
-    img: linkedinImg
-  }
-]
 
 export function Header() {
   const location = useLocation()
@@ -156,20 +124,7 @@ export function Header() {
         </Menu>
       </LeftContainer>
       <RightContainer>
-        <Socials>
-          {socials.map(({ link, img }) => (
-            <SocialLink
-              target="_blank"
-              href={link}
-              key={link}
-            >
-              <img
-                height={20}
-                src={img}
-              />
-            </SocialLink>
-          ))}
-        </Socials>
+        <Socials />
         <MailLink href="mailto:jtoming@gmail.com">
           <Button>
             Mail Me
@@ -182,6 +137,7 @@ export function Header() {
           </Button>
         </MailLink>
       </RightContainer>
+      <MobileMenu />
     </Container>
   )
 }

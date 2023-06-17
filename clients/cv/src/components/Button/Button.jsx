@@ -9,12 +9,12 @@ export const Button = styled.div`
   height: 35px;
   margin: auto;
   display: flex;
-  color: black;
+  color: var(--primary-text-color);
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.5s ease;
 
   &:hover {
-    background-color: var(--brand-color-2);
+    background-color: var(--brand-dark-color);
   }
 `

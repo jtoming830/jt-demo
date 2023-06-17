@@ -14,6 +14,7 @@ const Container = styled.div`
   margin: auto;
   @media only screen and (max-width: 1300px) {
     margin: 0 60px;
+    width: calc(100vw - 120px);
   }
 
   @media only screen and (max-width: 1000px) {
@@ -25,6 +26,8 @@ const Container = styled.div`
 
   @media only screen and (max-width: 720px) {
     margin: 0 10px;
+    width: calc(100vw - 20px);
+    max-width: none;
   }
 `
 
@@ -37,7 +40,7 @@ const Content = styled.div`
   margin-top: 10px;
   padding: 45px;
   border-radius: 10px;
-  background: white;
+  background: var(--bg-color);
   box-shadow: var(--shadow);
 `
 

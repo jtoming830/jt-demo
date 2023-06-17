@@ -1,3 +1,5 @@
 export { default as Home } from './Home'
 export { default as Mail } from './Mail'
+export { default as Menu } from './Menu'
 export { default as Person } from './Person'
+export { default as Work } from './Work'
