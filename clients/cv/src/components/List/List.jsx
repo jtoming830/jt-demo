@@ -6,7 +6,7 @@ export const List = styled.ul`
   li {
     padding: 0 0 20px 20px;
     line-height: 12px;
-    border-left: 2px solid var(--secondary-text-color);
+    border-left: 2px solid var(--border-color);
 
     &:before {
       content: '';

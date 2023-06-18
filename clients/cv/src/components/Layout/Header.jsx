@@ -3,7 +3,7 @@ import { routes } from '../../router'
 import { Link, useLocation } from 'react-router-dom'
 import { Home, Mail } from '../icons'
 import { Button } from '../Button'
-import { Socials } from './Socials'
+import { Socials } from '../Socials'
 import { MobileMenu } from './MobileMenu'
 
 const Container = styled.div`
@@ -97,6 +97,19 @@ const MailLink = styled.a`
   }
 `
 
+const SocialsContainer = styled.div`
+  display: flex;
+  transition: visibility 0.5s, opacity 0.5s linear;
+  @media only screen and (min-width: 500px) and (max-width: 1200px) {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  @media only screen and (min-width: 500px) and (max-width: 1080px) {
+    display: none;
+  }
+`
+
 export function Header() {
   const location = useLocation()
 
@@ -128,7 +141,9 @@ export function Header() {
         </Menu>
       </LeftContainer>
       <RightContainer>
-        <Socials />
+        <SocialsContainer>
+          <Socials />
+        </SocialsContainer>
         <MailLink href="mailto:jtoming@gmail.com">
           <Button>
             Mail Me

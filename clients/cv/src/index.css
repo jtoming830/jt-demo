@@ -12,7 +12,9 @@ body {
   --brand-dark-color: #e66400;
 
   --primary-text-color: #000000;
-  --secondary-text-color: #989898;
+  --secondary-text-color: #797878;
+
+  --border-color: #989898;
 
   --bg-color: #ffffff;
   --popup-bg-color: #fdfdfd;

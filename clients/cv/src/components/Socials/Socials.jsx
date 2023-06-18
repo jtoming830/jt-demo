@@ -11,8 +11,8 @@ const Container = styled.div`
 
 const SocialLink = styled.a`
   display: block;
-  height: 20px;
   transition: transform 0.3s ease;
+  height: ${(props) => props.$height + 'px'};
 
   &:hover {
     transform: scale(1.2);
@@ -20,16 +20,6 @@ const SocialLink = styled.a`
 
   & + & {
     margin-left: 10px;
-  }
-
-  transition: visibility 0.5s, opacity 0.5s linear;
-  @media only screen and (min-width: 500px) and (max-width: 1200px) {
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  @media only screen and (min-width: 500px) and (max-width: 1080px) {
-    display: none;
   }
 `
 
@@ -52,17 +42,18 @@ const socials = [
   }
 ]
 
-export function Socials() {
+export function Socials({ height = 20 }) {
   return (
     <Container>
       {socials.map(({ link, img }) => (
         <SocialLink
+          $height={height}
           target="_blank"
           href={link}
           key={link}
         >
           <img
-            height={20}
+            height={height}
             src={img}
           />
         </SocialLink>

@@ -43,7 +43,7 @@ const Dropdown = styled.div`
 const StyledLink = styled(Link)`
   display: block;
   height: 60px;
-  border-bottom: 1px solid var(--secondary-text-color);
+  border-bottom: 1px solid var(--border-color);
   width: 100%;
   display: flex;
   justify-content: center;
