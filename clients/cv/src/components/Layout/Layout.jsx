@@ -8,10 +8,10 @@ import { useEffect, useState } from 'react'
 const Container = styled.div`
   display: flex;
   padding: 60px 0;
-  width: fit-content;
+  width: 1200px;
   gap: 30px;
-
   margin: auto;
+
   @media only screen and (max-width: 1300px) {
     margin: 0 60px;
     width: calc(100vw - 120px);
