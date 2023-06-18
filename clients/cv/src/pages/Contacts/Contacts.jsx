@@ -9,6 +9,10 @@ const IFrame = styled.iframe`
 
 const Item = styled.div`
   font-size: 14px;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
 `
 
 const Title = styled.span``
