@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: 'Nunito Sans';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  width: 100vw;
+  overflow-x: hidden;
+
+  --header-shadow-color: #0000000f;
+  --text-color: #111517;
+  --input-placeholder-color: #848484;
+
+  --bg-color: #ffffff;
+  --page-bg-color: #fafafa;
+
+  &[themedark] {
+    --text-color: #FFFFFF;
+    --input-placeholder-color: #FFFFFF;
+  
+    --bg-color: #2B3844;
+    --page-bg-color: #202C36;
+  }
+
+  color: var(--text-color);
+  background-color: var(--page-bg-color);
+
+  font-size: 16px;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+}
