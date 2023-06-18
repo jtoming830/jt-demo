@@ -48,11 +48,11 @@ export function Layout() {
   const location = useLocation()
 
   const [displayLocation, setDisplayLocation] = useState(location)
-  const [transitionStage, setTransistionStage] = useState('fadeIn')
+  const [transitionStage, setTransitionStage] = useState('fadeIn')
 
   useEffect(() => {
     if (location.pathname !== displayLocation.pathname) {
-      setTransistionStage('fadeOut')
+      setTransitionStage('fadeOut')
     }
   }, [location, displayLocation])
 
@@ -65,7 +65,7 @@ export function Layout() {
           className={`${transitionStage}`}
           onAnimationEnd={() => {
             if (transitionStage === 'fadeOut') {
-              setTransistionStage('fadeIn')
+              setTransitionStage('fadeIn')
               setDisplayLocation(location)
             }
           }}
