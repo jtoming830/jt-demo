@@ -26,6 +26,7 @@ const Item = styled.span`
   color: var(--menu-item-color);
 
   cursor: pointer;
+  transition: 0.3s ease;
   &:hover {
     color: var(--menu-item-hovered-color);
   }

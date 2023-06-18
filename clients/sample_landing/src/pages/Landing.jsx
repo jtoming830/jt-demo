@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { Background, Description, Footer, Header, TopContainer } from '../components'
+import { Background, Description, Footer, Header, Reviews, TopContainer } from '../components'
 
 const Container = styled.div`
   width: 1110px;
@@ -15,6 +15,7 @@ export default function Landing() {
         <Header />
         <TopContainer />
         <Description />
+        <Reviews />
       </Container>
       <Footer />
     </>
