@@ -1,4 +1,4 @@
-import { About, Resume /* , Portfolio, Contacts*/ } from './pages'
+import { About, Resume /* , Portfolio */, Contacts } from './pages'
 
 export const routes = [
   {
@@ -12,17 +12,17 @@ export const routes = [
     Component: Resume,
     label: 'Resume',
     key: 'resume'
-  }
+  },
   // {
   //   path: '/cv/portfolio',
   //   Component: Portfolio,
   //   label: 'Portfolio',
   //   key: 'portfolio'
   // },
-  // {
-  //   path: '/cv/contacts',
-  //   Component: Contacts,
-  //   label: 'Contacts',
-  //   key: 'contacts'
-  // }
+  {
+    path: '/cv/contacts',
+    Component: Contacts,
+    label: 'Contacts',
+    key: 'contacts'
+  }
 ]
