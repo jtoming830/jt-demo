@@ -44,7 +44,9 @@ const RightContainer = styled.div`
   width: 1110px;
 `
 
-const Content = styled.div``
+const Content = styled.div`
+  margin-bottom: 160px;
+`
 
 const parsePath = (str) => str.split('/').filter(Boolean).join('/')
 

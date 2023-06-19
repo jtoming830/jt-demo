@@ -1,3 +1,6 @@
+import { Gallery } from '../../components'
+import { portfolioProjects } from '../../utils'
+
 export function Portfolio() {
-  return <div>Portfolio</div>
+  return <Gallery items={portfolioProjects} />
 }
