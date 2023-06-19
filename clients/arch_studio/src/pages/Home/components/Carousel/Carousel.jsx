@@ -75,6 +75,7 @@ export function Carousel() {
       <ButtonGroup>
         {items.map((_, i) => (
           <NumberButton
+            key={i}
             onClick={() => setIndex(i)}
             className={index === i ? 'active' : ''}
           >
