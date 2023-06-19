@@ -10,25 +10,34 @@ const Container = styled.div`
 `
 
 const LeftContainer = styled.div`
-  width: 165px;
+  width: calc((100vw - 1110px) / 2);
 `
 
 const Line = styled.div`
-  padding-left: 77px;
+  margin: auto;
   border-right: 1px solid var(--light-grey);
   width: 1px;
   height: 104px;
 `
 
+const LocationLabelContainer = styled.div`
+  position: relative;
+  margin: auto;
+  width: 1px;
+`
+
 const LocationLabel = styled.div`
   transform: rotate(90deg);
-  margin-top: 128px;
   font-size: 18px;
   letter-spacing: 18px;
   text-transform: uppercase;
   color: var(--light-grey);
-  margin-left: -12px;
   white-space: nowrap;
+  line-height: 24px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 36px;
 `
 
 const RightContainer = styled.div`
@@ -57,7 +66,9 @@ export function Layout() {
     <Container>
       <LeftContainer>
         <Line />
-        <LocationLabel className={transitionStage}>{locationLabel}</LocationLabel>
+        <LocationLabelContainer>
+          <LocationLabel className={transitionStage}>{locationLabel}</LocationLabel>
+        </LocationLabelContainer>
       </LeftContainer>
       <RightContainer>
         <Header />
