@@ -16,6 +16,7 @@ const serveStatic = (folder: string) =>
     serveStatic('movies'),
     serveStatic('sample_landing'),
     serveStatic('countries'),
+    serveStatic('arch_studio'),
     MoviesModule,
   ],
   controllers: [AppController],
