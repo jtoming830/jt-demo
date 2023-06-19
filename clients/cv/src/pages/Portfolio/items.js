@@ -1,7 +1,15 @@
 import sampleLandingImg from '../../images/sample_landing.webp'
 import countriesImg from '../../images/countries.webp'
+import archStudioImg from '../../images/arch_studio.jpg'
 
 export const items = [
+  {
+    key: 'arch_studio',
+    link: 'arch_studio',
+    img: archStudioImg,
+    title: 'Architech Studio multi-page website',
+    text: 'Fully responsive 4-page site for the fictional architect studio.'
+  },
   {
     key: 'sample_landing',
     link: 'sample_landing',

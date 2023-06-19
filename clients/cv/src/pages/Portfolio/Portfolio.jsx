@@ -5,13 +5,14 @@ import { items } from './items'
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 60px 15px;
   justify-content: space-between;
 
   @media only screen and (min-width: 1001px) and (max-width: 1200px) {
     width: 300px;
     flex-direction: column;
-    margin: auto 0;
+    gap: 30px;
+    margin: 0 auto;
   }
 `
 
