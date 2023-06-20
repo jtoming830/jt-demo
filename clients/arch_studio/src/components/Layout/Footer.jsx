@@ -13,6 +13,10 @@ const Container = styled.div`
     width: 100vw;
   }
 
+  @media only screen and (max-width: 1000px) {
+    height: 120px;
+  }
+
   margin: auto;
   position: relative;
 
@@ -39,16 +43,31 @@ const LogoContainer = styled.div`
   align-items: center;
 
   margin-right: 85px;
+
+  @media only screen and (max-width: 1000px) {
+    height: 120px;
+    width: 120px;
+
+    margin-right: 40px;
+  }
 `
 
 const StyledLogo = styled(Logo)`
   cursor: pointer;
+
+  @media only screen and (max-width: 1000px) {
+    height: 24px;
+  }
 `
 
 const LinkButtonContainer = styled.div`
   position: absolute;
   top: 64px;
   right: 0;
+
+  @media only screen and (max-width: 1000px) {
+    top: 24px;
+  }
 `
 
 export function Footer() {
