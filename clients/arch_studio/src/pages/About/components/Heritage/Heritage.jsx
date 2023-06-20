@@ -1,5 +1,6 @@
 import { styled } from 'styled-components'
 import img from '../../../../assets/about/desktop/image-heritage.jpg'
+import { Underline } from '../../../../components'
 
 const Container = styled.div`
   display: flex;
@@ -7,26 +8,11 @@ const Container = styled.div`
   margin-top: 200px;
 `
 
-const Underline = styled.div`
-  width: 65px;
-  height: 1px;
-  background: var(--light-grey);
-  margin-bottom: 84px;
-`
-
-const Title = styled.div`
-  font-size: 72px;
-  line-height: 64px;
-  letter-spacing: -2px;
-  font-weight: 700;
+const Title = styled.h2`
   margin-bottom: 54px;
-  white-space: pre;
 `
 
 const Text = styled.div`
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 500;
   color: var(--dark-grey);
 `
 
@@ -42,7 +28,7 @@ export function Heritage() {
   return (
     <Container>
       <div>
-        <Underline />
+        <Underline marginBottom={84} />
         <Title>{'Our\nHeritage'}</Title>
         <Text>
           <p>

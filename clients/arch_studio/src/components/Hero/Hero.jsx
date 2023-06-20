@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Underline } from '../Underline'
 
 const Container = styled.div`
   position: relative;
@@ -23,13 +24,7 @@ const Content = styled.div`
   right: 0;
 `
 
-const Title = styled.div`
-  font-size: 250px;
-  line-height: 200px;
-  letter-spacing: -5px;
-  font-weight: 700;
-  color: var(--very-light-grey);
-
+const Title = styled.h1`
   position: absolute;
   right: 0;
   top: -90px;
@@ -42,25 +37,11 @@ const TextContainer = styled.div`
   left: 182px;
 `
 
-const Underline = styled.div`
-  width: 65px;
-  height: 1px;
-  background: var(--light-grey);
-  margin-bottom: 58px;
-`
-
-const SubTitle = styled.div`
-  font-size: 72px;
-  line-height: 64px;
-  letter-spacing: -2px;
-  font-weight: 700;
+const SubTitle = styled.h2`
   margin-bottom: 50px;
 `
 
 const Text = styled.div`
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 500;
   color: var(--dark-grey);
 `
 
@@ -71,7 +52,7 @@ export function Hero({ img, title, subTitle, text }) {
       <Content>
         <Title>{title}</Title>
         <TextContainer>
-          <Underline />
+          <Underline marginBottom={58} />
           <SubTitle>{subTitle}</SubTitle>
           <Text>{text}</Text>
         </TextContainer>

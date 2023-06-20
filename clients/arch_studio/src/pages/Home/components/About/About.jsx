@@ -12,11 +12,7 @@ const Container = styled.div`
   background-blend-mode: darken;
 `
 
-const Title = styled.div`
-  font-size: 72px;
-  line-height: 64px;
-  letter-spacing: -2px;
-  font-weight: 700;
+const Title = styled.h2`
   color: var(--white);
   width: 445px;
   margin-bottom: 28px;

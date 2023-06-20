@@ -17,10 +17,7 @@ const Image = styled.div`
   background-blend-mode: darken;
 `
 
-const ImageTitle = styled.div`
-  font-size: 32px;
-  line-height: 40px;
-  font-weight: 700;
+const ImageTitle = styled.h3`
   color: var(--white);
 
   margin-top: 458px;

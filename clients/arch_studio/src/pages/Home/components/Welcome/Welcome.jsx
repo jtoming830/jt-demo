@@ -9,13 +9,7 @@ const Container = styled.div`
   gap: 125px;
 `
 
-const Title = styled.div`
-  font-size: 250px;
-  font-weight: 700;
-  letter-spacing: -5px;
-  line-height: 200px;
-  color: var(--very-light-grey);
-
+const Title = styled.h1`
   position: absolute;
   top: 110px;
 `
@@ -24,13 +18,8 @@ const Content = styled.div`
   margin-left: 190px;
 `
 
-const SubTitle = styled.div`
+const SubTitle = styled.h2`
   margin-top: 74px;
-  font-size: 72px;
-  font-weight: 700;
-  letter-spacing: -2px;
-  line-height: 64px;
-
   width: 446px;
 
   z-index: 1;
@@ -38,11 +27,9 @@ const SubTitle = styled.div`
 `
 
 const Text = styled.div`
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 24px;
   color: var(--dark-grey);
   width: 445px;
+  margin-top: 40px;
 `
 
 const Image = styled.img`

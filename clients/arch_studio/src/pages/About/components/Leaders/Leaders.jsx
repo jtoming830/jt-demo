@@ -9,14 +9,6 @@ const Container = styled.div`
   justify-content: space-between;
 `
 
-const Title = styled.div`
-  font-size: 72px;
-  line-height: 64px;
-  letter-spacing: -2px;
-  font-weight: 700;
-  white-space: pre;
-`
-
 const LeadersCards = styled.div`
   display: flex;
   gap: 30px;
@@ -64,24 +56,18 @@ const Image = styled.div`
   }
 `
 
-const CardTitle = styled.div`
+const CardTitle = styled.h3`
   margin-top: 15px;
-  font-size: 32px;
-  line-height: 40px;
-  font-weight: 700;
 `
 
 const CardText = styled.div`
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 500;
   opacity: 0.75;
 `
 
 export function Leaders() {
   return (
     <Container>
-      <Title>{'The\nLeaders'}</Title>
+      <h2>{'The\nLeaders'}</h2>
       <LeadersCards>
         {items.map(({ key, title, img, text }) => (
           <CardContainer key={key}>

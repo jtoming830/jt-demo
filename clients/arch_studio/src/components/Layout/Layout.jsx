@@ -28,12 +28,10 @@ const LocationLabelContainer = styled.div`
 
 const LocationLabel = styled.div`
   transform: rotate(90deg);
-  font-size: 18px;
   letter-spacing: 18px;
   text-transform: uppercase;
   color: var(--light-grey);
   white-space: nowrap;
-  line-height: 24px;
   position: absolute;
   left: 0;
   right: 0;

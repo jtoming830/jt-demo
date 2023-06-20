@@ -1,4 +1,4 @@
-import { About, Portfolio, Home, Contact } from './pages'
+import { About, Portfolio, Home, Contact } from 'pages'
 
 export const LINKS = {
   HOME: '/arch_studio',

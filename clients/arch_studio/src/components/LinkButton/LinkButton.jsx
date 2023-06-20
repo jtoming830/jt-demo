@@ -7,8 +7,7 @@ const Text = styled.span`
   margin-right: 24px;
   height: 100%;
   display: inline-block;
-  vertical-align: bottom;
-  font-size: 18px;
+  vertical-align: text-bottom;
   line-height: 25px;
   font-weight: 700;
 `

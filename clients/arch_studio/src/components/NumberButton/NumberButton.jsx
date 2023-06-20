@@ -6,7 +6,6 @@ export const NumberButton = styled(Button)`
   height: 80px;
 
   font-weight: 700;
-  font-size: 18px;
   line-height: 25px;
 
   background-color: var(--white);

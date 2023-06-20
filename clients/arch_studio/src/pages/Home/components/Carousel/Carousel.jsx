@@ -29,9 +29,6 @@ const Title = styled.div`
 `
 
 const Text = styled.div`
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 500;
   color: var(--white);
   width: 445px;
   margin-bottom: 40px;

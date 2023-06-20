@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom'
 
 const MenuItem = styled(Link)`
   color: var(--menu-item-color);
-  font-size: 18px;
   font-weight: 700;
   line-height: 25px;
   position: relative;

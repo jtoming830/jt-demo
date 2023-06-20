@@ -13,18 +13,11 @@ const TitleContainer = styled.div`
   justify-content: space-between;
 `
 
-const Title = styled.div`
-  font-size: 72px;
-  font-weight: 700;
-  line-height: 64px;
-  letter-spacing: -2px;
-`
-
 export function Featured() {
   return (
     <Container>
       <TitleContainer>
-        <Title>Featured</Title>
+        <h2>Featured</h2>
         <LinkButton to={LINKS.PORTFOLIO}>See All</LinkButton>
       </TitleContainer>
       <Gallery items={featuredProjects} />
