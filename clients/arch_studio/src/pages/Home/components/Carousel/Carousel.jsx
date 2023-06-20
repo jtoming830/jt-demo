@@ -5,7 +5,7 @@ import { items } from './items'
 import { LINKS } from '../../../../router'
 
 const Container = styled.div`
-  width: 1110px;
+  width: var(--content-width);
   height: 720px;
 
   position: relative;
@@ -16,8 +16,14 @@ const Content = styled.div`
   height: 720px;
   box-sizing: border-box;
 
-  background: var(--image-darken-color) url(${(props) => props.$img}) no-repeat;
+  --img-url: url(${(props) => props.$img.desktop});
+
+  background: var(--image-darken-color) var(--img-url) no-repeat;
   background-blend-mode: darken;
+
+  @media only screen and (max-width: 1200px) {
+    padding: 186px 0 0 58px;
+  }
 `
 
 const Title = styled.div`
@@ -39,6 +45,10 @@ const ButtonGroup = styled.div`
   position: absolute;
   bottom: 0;
   left: -80px;
+
+  @media only screen and (max-width: 1200px) {
+    left: 0;
+  }
 `
 
 export function Carousel() {

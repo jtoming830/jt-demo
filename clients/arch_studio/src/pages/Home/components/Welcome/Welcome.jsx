@@ -16,6 +16,10 @@ const Title = styled.h1`
 
 const Content = styled.div`
   margin-left: 190px;
+
+  @media only screen and (max-width: 1200px) {
+    margin-left: 0;
+  }
 `
 
 const SubTitle = styled.h2`
@@ -33,8 +37,11 @@ const Text = styled.div`
 `
 
 const Image = styled.img`
-  width: 350px;
-  height: 568px;
+  content: url(${img});
+
+  @media only screen and (max-width: 1200px) {
+    display: none;
+  }
 `
 
 export function Welcome() {
@@ -58,7 +65,7 @@ export function Welcome() {
           </p>
         </Text>
       </Content>
-      <Image src={img} />
+      <Image />
     </Container>
   )
 }

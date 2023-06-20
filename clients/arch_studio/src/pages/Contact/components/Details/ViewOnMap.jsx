@@ -2,10 +2,10 @@ import { IconArrow } from 'icons'
 import { styled } from 'styled-components'
 
 const Container = styled.div`
+  display: flex;
+  align-items: center;
   color: var(--text-color);
   font-weight: 700;
-  margin-top: 60px;
-
   cursor: pointer;
 `
 

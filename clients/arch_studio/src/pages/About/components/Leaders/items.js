@@ -1,7 +1,7 @@
-import jakeImg from '../../../../assets/about/desktop/avatar-jake.jpg'
-import thompsonImg from '../../../../assets/about/desktop/avatar-thompson.jpg'
-import jacksonImg from '../../../../assets/about/desktop/avatar-jackson.jpg'
-import mariaImg from '../../../../assets/about/desktop/avatar-maria.jpg'
+import jakeImg from 'assets/about/desktop/avatar-jake.jpg'
+import thompsonImg from 'assets/about/desktop/avatar-thompson.jpg'
+import jacksonImg from 'assets/about/desktop/avatar-jackson.jpg'
+import mariaImg from 'assets/about/desktop/avatar-maria.jpg'
 
 export const items = [
   {

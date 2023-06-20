@@ -3,7 +3,7 @@ import { Button } from 'components'
 import { IconArrow } from 'icons'
 
 const Container = styled.div`
-  width: 730px;
+  width: var(--content-width);
 `
 
 const ConfirmButton = styled(Button)`

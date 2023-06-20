@@ -7,11 +7,21 @@ import { LinkButton } from '../LinkButton'
 
 const Container = styled.div`
   height: 200px;
-  width: 984px;
+  width: var(--content-width);
 
-  background-color: var(--very-light-grey);
+  @media only screen and (max-width: 1200px) {
+    width: 100vw;
+  }
 
+  margin: auto;
   position: relative;
+
+  padding-right: 126px;
+  box-sizing: border-box;
+`
+
+const Content = styled.div`
+  background-color: var(--very-light-grey);
 
   display: flex;
   align-items: center;
@@ -37,7 +47,8 @@ const StyledLogo = styled(Logo)`
 
 const LinkButtonContainer = styled.div`
   position: absolute;
-  right: -126px;
+  top: 64px;
+  right: 0;
 `
 
 export function Footer() {
@@ -45,10 +56,12 @@ export function Footer() {
 
   return (
     <Container>
-      <LogoContainer>
-        <StyledLogo onClick={() => navigate(LINKS.HOME)} />
-      </LogoContainer>
-      <LinkMenu />
+      <Content>
+        <LogoContainer>
+          <StyledLogo onClick={() => navigate(LINKS.HOME)} />
+        </LogoContainer>
+        <LinkMenu />
+      </Content>
       <LinkButtonContainer>
         <LinkButton to={LINKS.PORTFOLIO}>See Our Portfolio</LinkButton>
       </LinkButtonContainer>

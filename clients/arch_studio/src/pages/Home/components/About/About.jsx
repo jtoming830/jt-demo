@@ -1,14 +1,22 @@
 import styled from 'styled-components'
-import { LinkButton } from '../../../../components'
-import img from '../../../../assets/home/desktop/image-small-team.jpg'
+import { LinkButton } from 'components'
+import imgDesktop from 'assets/home/desktop/image-small-team.jpg'
+import imgTablet from 'assets/home/tablet/image-small-team.jpg'
+import imgMobile from 'assets/home/mobile/image-small-team.jpg'
 
 const Container = styled.div`
-  width: 1110px;
+  width: var(--content-width);
 
-  padding: 166px 190px;
+  padding: 166px 58px;
   box-sizing: border-box;
 
-  background: var(--image-darken-color) url(${img}) no-repeat;
+  --img-url: url(${imgDesktop});
+
+  @media only screen and (max-width: 1200px) {
+    --img-url: url(${imgTablet});
+  }
+
+  background: var(--image-darken-color) var(--img-url) no-repeat;
   background-blend-mode: darken;
 `
 

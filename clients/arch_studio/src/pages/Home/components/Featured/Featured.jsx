@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
-import { Gallery, LinkButton } from '../../../../components'
-import { LINKS } from '../../../../router'
-import { featuredProjects } from '../../../../utils'
+import { Gallery, LinkButton } from 'components'
+import { LINKS } from 'router'
+import { featuredProjects } from 'utils'
 
 const Container = styled.div`
   margin-top: 208px;

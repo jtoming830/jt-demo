@@ -10,7 +10,7 @@ const Container = styled.div`
 `
 
 const LeftContainer = styled.div`
-  width: calc((100vw - 1110px) / 2);
+  width: calc((100vw - var(--content-width)) / 2);
 `
 
 const Line = styled.div`
@@ -39,7 +39,7 @@ const LocationLabel = styled.div`
 `
 
 const RightContainer = styled.div`
-  width: 1110px;
+  width: var(--content-width);
 `
 
 const Content = styled.div`
@@ -63,35 +63,37 @@ export function Layout() {
   const { label: locationLabel } = routes.find(({ path }) => parsePath(path) === parsePath(displayLocation.pathname)) || {}
 
   return (
-    <Container>
-      <LeftContainer>
-        <Line />
-        <LocationLabelContainer>
-          <LocationLabel className={transitionStage}>{locationLabel}</LocationLabel>
-        </LocationLabelContainer>
-      </LeftContainer>
-      <RightContainer>
-        <Header />
-        <Content
-          className={`${transitionStage}`}
-          onAnimationEnd={() => {
-            if (transitionStage === 'fadeOut') {
-              setTransitionStage('fadeIn')
-              setDisplayLocation(location)
-            }
-          }}
-        >
-          <Routes location={displayLocation}>
-            {routes.map((props) => (
-              <Route
-                key={props.key}
-                {...props}
-              />
-            ))}
-          </Routes>
-        </Content>
-        <Footer />
-      </RightContainer>
-    </Container>
+    <>
+      <Container>
+        <LeftContainer>
+          <Line />
+          <LocationLabelContainer>
+            <LocationLabel className={transitionStage}>{locationLabel}</LocationLabel>
+          </LocationLabelContainer>
+        </LeftContainer>
+        <RightContainer>
+          <Header />
+          <Content
+            className={`${transitionStage}`}
+            onAnimationEnd={() => {
+              if (transitionStage === 'fadeOut') {
+                setTransitionStage('fadeIn')
+                setDisplayLocation(location)
+              }
+            }}
+          >
+            <Routes location={displayLocation}>
+              {routes.map((props) => (
+                <Route
+                  key={props.key}
+                  {...props}
+                />
+              ))}
+            </Routes>
+          </Content>
+        </RightContainer>
+      </Container>
+      <Footer />
+    </>
   )
 }

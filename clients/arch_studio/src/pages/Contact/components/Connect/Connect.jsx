@@ -4,6 +4,10 @@ import { Form } from './components'
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: 1200px) {
+    flex-direction: column;
+  }
 `
 
 const Title = styled.h2`
