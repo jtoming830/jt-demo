@@ -23,15 +23,21 @@ const ImageTitle = styled.h3`
   margin-top: 458px;
 `
 
+const ImageDate = styled.div`
+  color: var(--white);
+  opacity: 0.75;
+`
+
 export function Gallery({ items }) {
   return (
     <Container>
-      {items.map(({ img, key, title }) => (
+      {items.map(({ img, key, title, date }) => (
         <Image
           key={key}
           $img={img}
         >
           <ImageTitle>{title}</ImageTitle>
+          <ImageDate>{date}</ImageDate>
         </Image>
       ))}
     </Container>

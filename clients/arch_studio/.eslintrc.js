@@ -9,7 +9,7 @@ module.exports = {
   },
   extends: ['eslint:recommended', 'plugin:prettier/recommended'],
   parser: '@babel/eslint-parser',
-  plugins: ['react', 'react-hooks'],
+  plugins: ['react', 'react-hooks', 'import'],
   settings: {
     react: {
       version: 'detect'
@@ -59,6 +59,7 @@ module.exports = {
     'valid-jsdoc': 2, // Ensure JSDoc comments are valid (off by default)
     'valid-typeof': 2, // Ensure that the results of typeof are compared against a valid string
     'require-await': 2,
+    'import/no-cycle': 2,
 
     //
     // Best Practices

@@ -1,6 +1,6 @@
-import { Hero } from '../../components'
-import heroImg from '../../assets/contact/desktop/image-hero.jpg'
-import mapImg from '../../assets/contact/desktop/image-map.png'
+import { Hero } from 'components'
+import heroImg from 'assets/contact/desktop/image-hero.jpg'
+import mapImg from 'assets/contact/desktop/image-map.png'
 import { Connect, Details } from './components'
 import { styled } from 'styled-components'
 
