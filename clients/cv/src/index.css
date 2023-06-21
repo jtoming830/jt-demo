@@ -38,6 +38,11 @@ body {
   animation: 0.5s fadeOut forwards;
 }
 
+.appear {
+  transform-origin: top;
+  animation: 1s appear forwards;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -53,5 +58,40 @@ body {
   }
   to {
     opacity: 0;
+  }
+}
+
+.expandable.expand {
+  animation: 1s expand forwards;
+  opacity: 1;
+  visibility: visible;
+}
+
+.expandable {
+  opacity: 0;
+  visibility: hidden;
+  transform-origin: top;
+  transition: 1s ease;
+
+  animation: 1s collapse forwards;
+}
+
+@keyframes expand {
+  from {
+    transform: scale(1, 0);
+  }
+
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes collapse {
+  from {
+    transform: scale(1, 1);
+  }
+
+  to {
+    transform: scale(1, 0);
   }
 }

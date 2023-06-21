@@ -27,17 +27,7 @@ const Dropdown = styled.div`
   width: calc(100vw - 20px);
   border-radius: 10px 10px 0 0;
   background-color: var(--popup-bg-color);
-  margin-top: 40px;
-
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.5s ease;
-
-  &.visible {
-    transform: translate(0, 40px);
-    opacity: 1;
-    visibility: visible;
-  }
+  margin-top: 80px;
 `
 
 const StyledLink = styled(Link)`
@@ -70,6 +60,8 @@ export function MobileMenu() {
     setVisible(!visible)
   }
 
+  const dropdownClassName = ['expandable', visible && 'expand'].filter(Boolean).join(' ')
+
   return (
     <>
       <Container onClick={onClick}>
@@ -78,7 +70,7 @@ export function MobileMenu() {
           height={20}
         />
       </Container>
-      <Dropdown className={visible ? 'visible' : ''}>
+      <Dropdown className={dropdownClassName}>
         {routes.map(({ path, home, key, label }) => {
           const selected = path === location.pathname
           return home ? null : (
