@@ -17,7 +17,21 @@ const Badge = styled.span`
   margin: 10px 0 0 10px;
 `
 
-const SKILLS = ['React', 'JS', 'TS', 'HTML', 'CSS', 'Redux', 'SASS', 'SCSS', 'Team Leading', 'Pixel Perfect Design']
+const SKILLS = [
+  'React',
+  'JS',
+  'TS',
+  'HTML',
+  'CSS',
+  'Redux',
+  'SASS',
+  'SCSS',
+  'Pixel Perfect Design',
+  'Nestjs',
+  'SQL',
+  'Solution Architect',
+  'Team Leading'
+]
 
 export default function About() {
   return (
@@ -28,17 +42,19 @@ export default function About() {
           Proficient in creating responsive and high-quality user interfaces for various business tasks by deploying React
           concepts. Always on the same page with designers and product owners to make best solutions.
         </p>
-        <p>I have good experience in team management, internal development and creating architectures.</p>
+        <p>Skilled in all stages of advanced web development - both frontend and backend.</p>
       </Section>
       <Section title="Techstack">
         <p>
-          Maynly I use React but I also have base knowledge of other modern front-end frameworks such as Angular and Vue.
+          For front-end I mainly use React but I also have base knowledge of other modern front-end frameworks such as
+          Angular and Vue.
         </p>
         <p>
           Experienced with everything from must-have React stack - Redux (prefer @redux-toolkit), react-router,
           styled-components and different UI kits - Ant Design, Material UI, Bootstrap. Also have a good knowledge of CSS and
-          it's pre-processors - SASS and SCSS.
+          its pre-processors - SASS and SCSS.
         </p>
+        <p>Competent in Nest.js with Typeorm and PostgreSQL.</p>
       </Section>
       <Section title="Skills">
         <SkillsContainer>
