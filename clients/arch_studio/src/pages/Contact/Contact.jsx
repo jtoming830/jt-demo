@@ -18,6 +18,13 @@ const Image = styled.img`
   @media only screen and (max-width: 1200px) {
     content: url(${mapImgTablet});
   }
+
+  @media only screen and (max-width: 600px) {
+    margin: 70px 0;
+    content: url(${mapImgMobile});
+    width: 100%;
+    height: calc(367 / 375 * (var(--content-width)));
+  }
 `
 
 export function Contact() {

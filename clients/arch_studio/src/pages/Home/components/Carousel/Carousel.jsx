@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { styled } from 'styled-components'
-import { NumberButton, LinkButton } from '../../../../components'
+import { NumberButton, LinkButton } from 'components'
 import { items } from './items'
-import { LINKS } from '../../../../router'
+import { LINKS } from 'router'
 
 const Container = styled.div`
   width: var(--content-width);
@@ -12,18 +12,25 @@ const Container = styled.div`
 `
 
 const Content = styled.div`
-  padding: 180px 0 0 190px;
   height: 720px;
   box-sizing: border-box;
 
+  padding: 180px 0 0 190px;
   --img-url: url(${(props) => props.$img.desktop});
-
-  background: var(--image-darken-color) var(--img-url) no-repeat;
-  background-blend-mode: darken;
 
   @media only screen and (max-width: 1200px) {
     padding: 186px 0 0 58px;
+    --img-url: url(${(props) => props.$img.tablet});
   }
+
+  @media only screen and (max-width: 600px) {
+    padding: 116px 0 0 32px;
+    --img-url: url(${(props) => props.$img.mobile});
+    background-size: cover;
+  }
+
+  background: var(--image-darken-color) var(--img-url) no-repeat;
+  background-blend-mode: darken;
 `
 
 const Title = styled.div`
@@ -32,12 +39,22 @@ const Title = styled.div`
   font-weight: 700;
   color: var(--white);
   white-space: pre;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 48px;
+    line-height: 48px;
+    letter-spacing: -1.2px;
+  }
 `
 
 const Text = styled.div`
   color: var(--white);
   width: 445px;
   margin-bottom: 40px;
+
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 84px;
+  }
 `
 
 const ButtonGroup = styled.div`
@@ -46,8 +63,12 @@ const ButtonGroup = styled.div`
   bottom: 0;
   left: -80px;
 
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 1400px) {
     left: 0;
+  }
+
+  @media only screen and (max-width: 600px) {
+    left: 32px;
   }
 `
 

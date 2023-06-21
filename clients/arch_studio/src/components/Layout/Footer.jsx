@@ -17,6 +17,10 @@ const Container = styled.div`
     height: 120px;
   }
 
+  @media only screen and (max-width: 780px) {
+    display: none;
+  }
+
   margin: auto;
   position: relative;
 
@@ -70,20 +74,53 @@ const LinkButtonContainer = styled.div`
   }
 `
 
+const MobileContainer = styled.div`
+  display: none;
+  background-color: var(--very-light-grey);
+  padding-bottom: 48px;
+
+  @media only screen and (max-width: 780px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 32px;
+
+    a {
+      margin-left: 0 !important;
+    }
+  }
+`
+
+const MobileLogoContainer = styled(LogoContainer)`
+  margin-top: -60px;
+  margin-right: 0;
+`
+
 export function Footer() {
   const navigate = useNavigate()
 
+  const onLogoClick = () => navigate(LINKS.HOME)
+
   return (
-    <Container>
-      <Content>
-        <LogoContainer>
-          <StyledLogo onClick={() => navigate(LINKS.HOME)} />
-        </LogoContainer>
+    <>
+      <Container>
+        <Content>
+          <LogoContainer>
+            <StyledLogo onClick={onLogoClick} />
+          </LogoContainer>
+          <LinkMenu />
+        </Content>
+        <LinkButtonContainer>
+          <LinkButton to={LINKS.PORTFOLIO}>See Our Portfolio</LinkButton>
+        </LinkButtonContainer>
+      </Container>
+      <MobileContainer>
+        <MobileLogoContainer>
+          <StyledLogo onClick={onLogoClick} />
+        </MobileLogoContainer>
         <LinkMenu />
-      </Content>
-      <LinkButtonContainer>
         <LinkButton to={LINKS.PORTFOLIO}>See Our Portfolio</LinkButton>
-      </LinkButtonContainer>
-    </Container>
+      </MobileContainer>
+    </>
   )
 }

@@ -16,9 +16,12 @@ const StyledButton = styled(Button)`
   padding: 25px 32px 22px 37px;
 `
 
-export function LinkButton({ to, children }) {
+export function LinkButton({ to, children, className }) {
   return (
-    <Link to={to}>
+    <Link
+      className={className}
+      to={to}
+    >
       <StyledButton>
         <Text>{children}</Text>
         <IconArrow />

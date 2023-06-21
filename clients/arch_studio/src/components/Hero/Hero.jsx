@@ -16,6 +16,13 @@ const Image = styled.div`
     --img-url: url(${(props) => props.$getImageUrl('tablet')});
   }
 
+  @media only screen and (max-width: 600px) {
+    width: var(--content-width);
+    height: calc(240 / 375 * var(--content-width));
+    --img-url: url(${(props) => props.$getImageUrl('mobile')});
+    background-size: contain;
+  }
+
   background: var(--image-darken-color) var(--img-url) no-repeat;
   background-blend-mode: darken;
 `
@@ -34,12 +41,23 @@ const Content = styled.div`
     width: 514px;
     height: 430px;
   }
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    height: 300px;
+    bottom: unset;
+    position: relative;
+  }
 `
 
 const Title = styled.h1`
   position: absolute;
   right: 0;
   top: -90px;
+
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
 `
 
 const TextContainer = styled.div`
@@ -51,10 +69,25 @@ const TextContainer = styled.div`
   @media only screen and (max-width: 1200px) {
     left: 60px;
   }
+
+  @media only screen and (max-width: 600px) {
+    width: unset;
+    left: 0px;
+    padding-left: 32px;
+    margin-right: 32px;
+    background: var(--white);
+    top: -45px;
+    height: fit-content;
+    padding-top: 65px;
+  }
 `
 
 const SubTitle = styled.h2`
   margin-bottom: 50px;
+
+  @media only screen and (max-width: 600px) {
+    width: 300px;
+  }
 `
 
 const Text = styled.div`
@@ -67,15 +100,16 @@ const StyledUnderline = styled(Underline)`
   @media only screen and (max-width: 1200px) {
     margin-bottom: 74px;
   }
+
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
 `
 
-export function Hero({ img, title, subTitle, text, getImageUrl }) {
+export function Hero({ title, subTitle, text, getImageUrl }) {
   return (
     <Container>
-      <Image
-        $img={img}
-        $getImageUrl={getImageUrl}
-      />
+      <Image $getImageUrl={getImageUrl} />
       <Content>
         <Title>{title}</Title>
         <TextContainer>

@@ -4,6 +4,10 @@ import { IconArrow } from 'icons'
 
 const Container = styled.div`
   width: var(--content-width);
+
+  @media only screen and (max-width: 600px) {
+    width: calc(var(--content-width) - 64px);
+  }
 `
 
 const ConfirmButton = styled(Button)`

@@ -16,6 +16,13 @@ const Container = styled.div`
     --img-url: url(${imgTablet});
   }
 
+  @media only screen and (max-width: 600px) {
+    --img-url: url(${imgMobile});
+    background-size: cover;
+    padding: 180px 32px;
+    height: 560px;
+  }
+
   background: var(--image-darken-color) var(--img-url) no-repeat;
   background-blend-mode: darken;
 `
@@ -24,6 +31,11 @@ const Title = styled.h2`
   color: var(--white);
   width: 445px;
   margin-bottom: 28px;
+
+  @media only screen and (max-width: 1200px) {
+    width: 300px;
+    margin-bottom: 22px;
+  }
 `
 
 export function About() {

@@ -21,6 +21,22 @@ const Image = styled.div`
     --img-url: url(${(props) => props.$img.tablet});
   }
 
+  @media only screen and (max-width: 600px) {
+    --img-width: calc(100vw - 64px);
+    width: var(--img-width);
+    height: calc(240 / 311 * var(--img-width));
+    background-size: contain;
+    --img-url: url(${(props) => props.$img.mobile});
+
+    padding-left: 24px;
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    margin: 0 32px;
+  }
+
   background: var(--image-darken-gradient), var(--img-url) no-repeat;
   background-blend-mode: darken;
 `

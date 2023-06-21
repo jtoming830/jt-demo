@@ -8,10 +8,18 @@ const Container = styled.div`
   @media only screen and (max-width: 1200px) {
     flex-direction: column;
   }
+
+  @media only screen and (max-width: 600px) {
+    margin: 0 32px;
+  }
 `
 
 const Title = styled.h2`
   width: 350px;
+
+  @media only screen and (max-width: 600px) {
+    width: 250px;
+  }
 `
 
 export function Connect() {

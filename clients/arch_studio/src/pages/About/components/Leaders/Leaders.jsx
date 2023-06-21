@@ -12,6 +12,10 @@ const Container = styled.div`
     flex-direction: column;
     gap: 50px;
   }
+
+  @media only screen and (max-width: 600px) {
+    margin: 112px 32px 0;
+  }
 `
 
 const LeadersCards = styled.div`
@@ -22,8 +26,13 @@ const LeadersCards = styled.div`
   row-gap: 64px;
 
   @media only screen and (max-width: 1200px) {
-    width: var(--content-width);
+    width: 100%;
     row-gap: 100px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    row-gap: 80px;
   }
 `
 
@@ -36,6 +45,11 @@ const Image = styled.div`
   @media only screen and (max-width: 1200px) {
     height: 256px;
     width: 280px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    height: calc(32 / 35 * (var(--content-width) - 64px));
   }
 
   background: url(${(props) => props.$img}) no-repeat;

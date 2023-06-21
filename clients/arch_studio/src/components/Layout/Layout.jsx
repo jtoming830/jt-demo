@@ -11,6 +11,11 @@ const Container = styled.div`
 
 const LeftContainer = styled.div`
   width: calc((100vw - var(--content-width)) / 2);
+
+  transition: 0.5s ease;
+  @media only screen and (max-width: 780px) {
+    opacity: 0;
+  }
 `
 
 const Line = styled.div`
@@ -59,6 +64,10 @@ export function Layout() {
       setTransitionStage('fadeOut')
     }
   }, [location, displayLocation])
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [displayLocation])
 
   const { label: locationLabel } = routes.find(({ path }) => parsePath(path) === parsePath(displayLocation.pathname)) || {}
 

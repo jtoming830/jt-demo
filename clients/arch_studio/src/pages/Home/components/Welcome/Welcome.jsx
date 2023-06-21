@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import img from '../../../../assets/home/desktop/image-welcome.jpg'
+import { Underline } from 'components'
 
 const Container = styled.div`
   padding-top: 195px;
@@ -7,11 +8,29 @@ const Container = styled.div`
   position: relative;
   display: flex;
   gap: 125px;
+
+  @media only screen and (max-width: 600px) {
+    padding: 72px 32px 114px;
+    display: block;
+  }
 `
 
 const Title = styled.h1`
   position: absolute;
   top: 110px;
+
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
+`
+
+const StyledUnderline = styled(Underline)`
+  display: none;
+
+  @media only screen and (max-width: 600px) {
+    display: block;
+    margin-bottom: 70px;
+  }
 `
 
 const Content = styled.div`
@@ -48,6 +67,7 @@ export function Welcome() {
   return (
     <Container>
       <Title>Welcome</Title>
+      <StyledUnderline />
       <Content>
         <SubTitle>Welcome to Arch Studio</SubTitle>
         <Text>

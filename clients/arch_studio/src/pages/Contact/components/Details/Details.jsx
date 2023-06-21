@@ -4,6 +4,10 @@ import { ViewOnMap } from './ViewOnMap'
 
 const Container = styled.div`
   margin-top: 200px;
+
+  @media only screen and (max-width: 600px) {
+    margin: 74px 32px 0;
+  }
 `
 
 const StyledUnderline = styled(Underline)`
@@ -11,6 +15,10 @@ const StyledUnderline = styled(Underline)`
 
   @media only screen and (max-width: 1200px) {
     margin-bottom: 50px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 70px;
   }
 `
 
@@ -43,6 +51,12 @@ const ContactInfo = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+  }
+
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 44px;
   }
 `
 

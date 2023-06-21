@@ -6,6 +6,10 @@ const Container = styled.div`
   display: flex;
   gap: 124px;
   margin-top: 200px;
+
+  @media only screen and (max-width: 600px) {
+    margin: 50px 32px 0;
+  }
 `
 
 const StyledUnderline = styled(Underline)`
@@ -14,6 +18,10 @@ const StyledUnderline = styled(Underline)`
   @media only screen and (max-width: 1200px) {
     margin-bottom: 50px;
   }
+
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 68px;
+  }
 `
 
 const Title = styled.h2`
@@ -21,6 +29,10 @@ const Title = styled.h2`
 
   @media only screen and (max-width: 1200px) {
     margin-bottom: 62px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 22px;
   }
 `
 
