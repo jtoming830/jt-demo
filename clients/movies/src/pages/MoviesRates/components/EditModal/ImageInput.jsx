@@ -3,7 +3,7 @@ import { styled } from 'styled-components'
 
 const Image = styled.img`
   max-width: 100%;
-  max-height: 194px;
+  height: 194px;
   margin: auto;
   margin-bottom: 8px;
   display: block;
