@@ -3,7 +3,7 @@ import { IconFacebook, IconInstagram, IconPinterest, IconTwitter, IconYoutube, L
 import { Button } from '../Button'
 import { EmailInput } from '../EmailInput'
 
-const BottomContainer = styled.div`
+const Container = styled.div`
   height: 250px;
   background-color: var(--footer-bg);
 
@@ -40,6 +40,14 @@ const IconsContainer = styled.div`
 const Menu = styled.div`
   display: flex;
   gap: 30px;
+
+  @media only screen and (max-width: 1200px) {
+    gap: 100px;
+  }
+
+  @media only screen and (max-width: 900px) {
+    gap: 40px;
+  }
 `
 
 const MenuColumn = styled.div`
@@ -47,6 +55,10 @@ const MenuColumn = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
+
+  @media only screen and (max-width: 1200px) {
+    width: 100px;
+  }
 `
 
 const Item = styled.div`
@@ -89,7 +101,7 @@ const Copyright = styled.div`
 
 export function BottomFooter() {
   return (
-    <BottomContainer>
+    <Container>
       <SocialsContainer>
         <StyledLogo />
         <IconsContainer>
@@ -120,6 +132,6 @@ export function BottomFooter() {
         </EmailContainer>
         <Copyright>Copyright 2020. All Rights Reserved</Copyright>
       </RightContainer>
-    </BottomContainer>
+    </Container>
   )
 }

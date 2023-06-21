@@ -3,11 +3,22 @@ import { styled } from 'styled-components'
 const Container = styled.div`
   display: flex;
   padding-bottom: 146px;
+
+  @media only screen and (max-width: 1200px) {
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+  }
 `
 
 const Column = styled.div`
   width: 445px;
   margin-right: 125px;
+
+  @media only screen and (max-width: 1200px) {
+    text-align: center;
+    margin: 0;
+  }
 `
 
 const Title = styled.div`

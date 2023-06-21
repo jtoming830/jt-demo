@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 import { GetStarted } from '../GetStarted'
 
-const TopContainer = styled.div`
+const Container = styled.div`
   height: 220px;
   display: flex;
   justify-content: space-between;
@@ -20,9 +20,9 @@ const SimplifyText = styled.div`
 
 export function TopFooter() {
   return (
-    <TopContainer>
+    <Container>
       <SimplifyText>Simplify how your team works today.</SimplifyText>
       <GetStarted className="invert" />
-    </TopContainer>
+    </Container>
   )
 }
