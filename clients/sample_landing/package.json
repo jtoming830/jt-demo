@@ -10,7 +10,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint --ext .js,.jsx src",
     "analyze": "npx source-map-explorer build/static/js/*.js",
-    "prepare-svg": "npx @svgr/cli --ext jsx --out-dir ./src/icons -- ./icons"
+    "prepare-svg": "npx @svgr/cli --ignore-existing --ext jsx --out-dir ./src/icons -- ./icons"
   },
   "dependencies": {
     "react": "^18.2.0",
