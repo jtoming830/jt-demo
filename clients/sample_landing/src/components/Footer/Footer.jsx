@@ -1,6 +1,5 @@
 import { styled } from 'styled-components'
-import { BottomFooter } from './BottomFooter'
-import { TopFooter } from './TopFooter'
+import { BottomFooter, TopFooter } from './components'
 
 const Container = styled.div`
   > div {

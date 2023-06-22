@@ -8,6 +8,7 @@ const Container = styled.div`
     flex-direction: column;
     gap: 60px;
     align-items: center;
+    padding-bottom: 60px;
   }
 `
 
@@ -19,11 +20,16 @@ const Column = styled.div`
     text-align: center;
     margin: 0;
   }
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
 `
 
 const Title = styled.div`
   font-size: 40px;
   line-height: 44px;
+  font-weight: 700;
   color: var(--primary-text-color);
   margin-bottom: 20px;
 `
@@ -36,6 +42,10 @@ const Text = styled.div`
 
 const List = styled.div`
   width: 540px;
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
 `
 
 const Item = styled.div`
@@ -45,10 +55,17 @@ const Item = styled.div`
 const ItemTitle = styled.div`
   display: flex;
 
-  font-size: 16px;
+  font-size: 15px;
   line-height: 32px;
   color: var(--primary-text-color);
   margin-bottom: 20px;
+
+  @media only screen and (max-width: 600px) {
+    border-radius: 40px;
+    background: var(--brand-color-light);
+    letter-spacing: -0.2px;
+    font-weight: 700;
+  }
 `
 
 const ItemNumber = styled.div`
@@ -58,11 +75,22 @@ const ItemNumber = styled.div`
   background: var(--button-bg);
   border-radius: 40px;
 
+  font-weight: 700;
+  line-height: 30px;
+
   color: var(--button-color);
+
+  @media only screen and (max-width: 600px) {
+    margin-right: 15px;
+  }
 `
 
 const ItemText = styled(Text)`
   margin-left: 95px;
+
+  @media only screen and (max-width: 600px) {
+    margin-left: 0;
+  }
 `
 
 export function Description() {

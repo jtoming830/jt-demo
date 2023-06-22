@@ -33,6 +33,7 @@ const Title = styled.div`
   font-size: 56px;
   line-height: 64px;
   letter-spacing: -2.5px;
+  font-weight: 700;
 
   color: var(--primary-text-color);
 
@@ -40,6 +41,13 @@ const Title = styled.div`
 
   @media only screen and (max-width: 1200px) {
     padding-top: 0;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: -1px;
   }
 `
 
@@ -56,12 +64,20 @@ const Description = styled.div`
   @media only screen and (max-width: 1200px) {
     margin: 40px auto;
   }
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+  }
 `
 
 const StyledGetStarted = styled(GetStarted)`
   @media only screen and (max-width: 1200px) {
     margin: 0 auto;
   }
+`
+
+const StyledIllustrationIntro = styled(IllustrationIntro)`
+  width: 100%;
 `
 
 export function TopContainer() {
@@ -74,7 +90,7 @@ export function TopContainer() {
         </Description>
         <StyledGetStarted />
       </LeftContent>
-      <IllustrationIntro />
+      <StyledIllustrationIntro />
     </Container>
   )
 }

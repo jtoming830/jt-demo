@@ -5,6 +5,7 @@ const SvgIllustrationIntro = (props) => (
     xmlnsXlink="http://www.w3.org/1999/xlink"
     width={580}
     height={525}
+    viewBox="0 0 580 525"
     {...props}
   >
     <defs>

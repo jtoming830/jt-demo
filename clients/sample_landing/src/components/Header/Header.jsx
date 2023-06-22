@@ -1,11 +1,16 @@
 import { Logo } from '../../icons'
 import styled from 'styled-components'
 import { GetStarted } from '../GetStarted'
+import { DropdownMenu } from './DropdownMenu'
 
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
   margin-right: 20px;
+
+  @media only screen and (max-width: 800px) {
+    margin: 0;
+  }
 `
 
 const StyledLogo = styled(Logo)`
@@ -18,6 +23,10 @@ const Menu = styled.div`
 
   span + span {
     margin-left: 32px;
+  }
+
+  @media only screen and (max-width: 800px) {
+    display: none;
   }
 `
 
@@ -32,18 +41,25 @@ const Item = styled.span`
   }
 `
 
+const StyledGetStarted = styled(GetStarted)`
+  @media only screen and (max-width: 800px) {
+    display: none;
+  }
+`
+
+const items = ['Pricing', 'Product', 'About Us', 'Careers', 'Community']
+
 export function Header() {
   return (
     <Container>
       <StyledLogo />
       <Menu>
-        <Item>Pricing</Item>
-        <Item>Product</Item>
-        <Item>About Us</Item>
-        <Item>Careers</Item>
-        <Item>Community</Item>
+        {items.map((text) => (
+          <Item key={text}>{text}</Item>
+        ))}
       </Menu>
-      <GetStarted />
+      <StyledGetStarted />
+      <DropdownMenu items={items} />
     </Container>
   )
 }

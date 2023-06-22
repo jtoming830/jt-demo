@@ -1,20 +1,36 @@
 import { styled } from 'styled-components'
 import { items } from './items'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const ScrollableContainer = styled.div`
   width: 100vw;
   overflow: scroll;
+
+  @media only screen and (max-width: 600px) {
+    overflow: hidden;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
 `
 
 const Container = styled.div`
   display: flex;
   width: fit-content;
   gap: 30px;
+
+  @media only screen and (max-width: 600px) {
+    gap: 0;
+  }
 `
 
 const CardContainer = styled.div`
   height: 256px;
+
+  @media only screen and (max-width: 600px) {
+    height: fit-content;
+  }
 `
 
 const Card = styled.div`
@@ -25,6 +41,11 @@ const Card = styled.div`
   box-sizing: border-box;
   padding: 60px 40px 40px 40px;
   position: relative;
+
+  @media only screen and (max-width: 600px) {
+    width: 100vw;
+    height: fit-content;
+  }
 `
 
 const Image = styled.img`
@@ -49,29 +70,110 @@ const Text = styled.div`
   color: var(--secondary-text-color);
 `
 
+const Controls = styled.div`
+  margin: auto;
+  * + * {
+    margin-left: 4px;
+  }
+
+  display: none;
+
+  @media only screen and (max-width: 600px) {
+    display: block;
+  }
+`
+
+const ControlsButton = styled.div`
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 2px solid var(--brand-color);
+  transition: 0.5s ease;
+
+  &.active {
+    background: var(--brand-color);
+  }
+`
+
 export function Carousel(props) {
   const scrollableContainerRef = useRef()
+  const checkDirectionRef = useRef()
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const scrollToIndex = (index) => {
+    const bodyWidth = document.body.offsetWidth
+    scrollableContainerRef.current.scrollLeft = index * bodyWidth
+    setCurrentIndex(index)
+  }
+
+  checkDirectionRef.current = ({ touchendX, touchstartX }) => {
+    let newCurrentIndex = currentIndex
+    const { offsetWidth } = scrollableContainerRef.current
+
+    if (offsetWidth > 600) {
+      return
+    }
+
+    if (touchendX < touchstartX && currentIndex !== items.length - 1) {
+      newCurrentIndex++
+    } else if (touchendX > touchstartX && currentIndex !== 0) {
+      newCurrentIndex--
+    }
+
+    scrollToIndex(newCurrentIndex)
+  }
 
   useEffect(() => {
     const scrollableContainerElement = scrollableContainerRef.current
     const { offsetWidth, scrollWidth } = scrollableContainerElement
 
-    scrollableContainerElement.scrollLeft = (scrollWidth - offsetWidth) / 2
+    if (offsetWidth > 600) {
+      scrollableContainerElement.scrollLeft = (scrollWidth - offsetWidth) / 2
+    }
+
+    let touchstartX = 0
+    let touchendX = 0
+
+    document.addEventListener('touchstart', (e) => {
+      touchstartX = e.changedTouches[0].screenX
+    })
+
+    document.addEventListener('touchend', (e) => {
+      touchendX = e.changedTouches[0].screenX
+      checkDirectionRef.current({ touchstartX, touchendX })
+    })
   }, [])
 
   return (
-    <ScrollableContainer ref={scrollableContainerRef}>
-      <Container {...props}>
-        {items.map(({ img, title, text }) => (
-          <CardContainer key={title}>
-            <Card>
-              <Image src={img} />
-              <Title>{title}</Title>
-              <Text>{text}</Text>
-            </Card>
-          </CardContainer>
+    <>
+      <ScrollableContainer ref={scrollableContainerRef}>
+        <Container {...props}>
+          {items.map(({ img, title, text }, index) => (
+            <CardContainer
+              key={title}
+              id={`slide-${index}`}
+            >
+              <Card>
+                <Image src={img} />
+                <Title>{title}</Title>
+                <Text>{text}</Text>
+              </Card>
+            </CardContainer>
+          ))}
+        </Container>
+      </ScrollableContainer>
+      <Controls>
+        {items.map((_, index) => (
+          <ControlsButton
+            key={index}
+            onClick={() => {
+              scrollToIndex(index)
+            }}
+            className={currentIndex === index ? 'active' : ''}
+          />
         ))}
-      </Container>
-    </ScrollableContainer>
+      </Controls>
+    </>
   )
 }

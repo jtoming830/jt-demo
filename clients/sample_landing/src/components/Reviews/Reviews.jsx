@@ -15,6 +15,14 @@ const Title = styled.div`
   font-size: 40px;
   letter-spacing: -0.71px;
   margin-bottom: 64px;
+  font-weight: 800;
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 32px;
+    letter-spacing: -0.66px;
+    line-height: 45px;
+    text-align: center;
+  }
 `
 
 const StyledGetStarted = styled(GetStarted)`
