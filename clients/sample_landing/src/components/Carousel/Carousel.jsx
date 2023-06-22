@@ -98,30 +98,13 @@ const ControlsButton = styled.div`
 
 export function Carousel(props) {
   const scrollableContainerRef = useRef()
-  const checkDirectionRef = useRef()
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [touchStart, setTouchStart] = useState()
 
   const scrollToIndex = (index) => {
     const bodyWidth = document.body.offsetWidth
     scrollableContainerRef.current.scrollLeft = index * bodyWidth
     setCurrentIndex(index)
-  }
-
-  checkDirectionRef.current = ({ touchendX, touchstartX }) => {
-    let newCurrentIndex = currentIndex
-    const { offsetWidth } = scrollableContainerRef.current
-
-    if (offsetWidth > 600) {
-      return
-    }
-
-    if (touchendX < touchstartX && currentIndex !== items.length - 1) {
-      newCurrentIndex++
-    } else if (touchendX > touchstartX && currentIndex !== 0) {
-      newCurrentIndex--
-    }
-
-    scrollToIndex(newCurrentIndex)
   }
 
   useEffect(() => {
@@ -131,23 +114,32 @@ export function Carousel(props) {
     if (offsetWidth > 600) {
       scrollableContainerElement.scrollLeft = (scrollWidth - offsetWidth) / 2
     }
-
-    let touchstartX = 0
-    let touchendX = 0
-
-    document.addEventListener('touchstart', (e) => {
-      touchstartX = e.changedTouches[0].screenX
-    })
-
-    document.addEventListener('touchend', (e) => {
-      touchendX = e.changedTouches[0].screenX
-      checkDirectionRef.current({ touchstartX, touchendX })
-    })
   }, [])
 
   return (
     <>
-      <ScrollableContainer ref={scrollableContainerRef}>
+      <ScrollableContainer
+        ref={scrollableContainerRef}
+        onTouchStart={(e) => setTouchStart(e.changedTouches[0].screenX)}
+        onTouchEnd={(e) => {
+          const touchEnd = e.changedTouches[0].screenX
+          let newCurrentIndex = currentIndex
+          const { offsetWidth } = scrollableContainerRef.current
+
+          if (offsetWidth > 600) {
+            return
+          }
+
+          if (touchEnd < touchStart && currentIndex !== items.length - 1) {
+            newCurrentIndex++
+          } else if (touchEnd > touchStart && currentIndex !== 0) {
+            newCurrentIndex--
+          }
+
+          scrollToIndex(newCurrentIndex)
+        }}
+        onTouchCancel={() => setTouchStart(null)}
+      >
         <Container {...props}>
           {items.map(({ img, title, text }, index) => (
             <CardContainer
