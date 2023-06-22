@@ -65,7 +65,7 @@ const MobileMenuContainer = styled.div`
 
 const MobileMenu = styled.div`
   background: var(--very-light-grey);
-  padding: 40px 0;
+  padding: 44px 0;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -111,7 +111,13 @@ export function Header() {
         className="fadeIn"
         onClick={() => setVisible(!visible)}
       >
-        <StyledLogo onClick={() => navigate(LINKS.HOME)} />
+        <StyledLogo
+          onClick={(e) => {
+            e.stopPropagation()
+            setVisible(false)
+            navigate(LINKS.HOME)
+          }}
+        />
         <Menu>
           <LinkMenu />
         </Menu>
