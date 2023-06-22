@@ -50,9 +50,9 @@ const allProjects = [
   {
     key: 'seraph',
     img: {
-      desktop: projectDelSolImgDesktop,
-      tablet: projectDelSolImgTablet,
-      mobile: projectDelSolImgMobile
+      desktop: seraphImgDesktop,
+      tablet: seraphImgTablet,
+      mobile: seraphImgMobile
     },
     title: 'Seraph Station',
     date: 'September 2019'
@@ -60,9 +60,9 @@ const allProjects = [
   {
     key: 'eebox',
     img: {
-      desktop: tower228bImgDesktop,
-      tablet: tower228bImgTablet,
-      mobile: tower228bImgMobile
+      desktop: eeboxImgDesktop,
+      tablet: eeboxImgTablet,
+      mobile: eeboxImgMobile
     },
     title: 'Eebox Building',
     date: 'August 2017'
@@ -70,9 +70,9 @@ const allProjects = [
   {
     key: 'federal',
     img: {
-      desktop: prototypeImgDesktop,
-      tablet: prototypeImgTablet,
-      mobile: prototypeImgMobile
+      desktop: federalImgDesktop,
+      tablet: federalImgTablet,
+      mobile: federalImgMobile
     },
     title: 'Federal II Tower',
     date: 'March 2017'
@@ -81,9 +81,9 @@ const allProjects = [
     key: 'projectDelSol',
     featured: true,
     img: {
-      desktop: edelweissImgDesktop,
-      tablet: edelweissImgTablet,
-      mobile: edelweissImgMobile
+      desktop: projectDelSolImgDesktop,
+      tablet: projectDelSolImgTablet,
+      mobile: projectDelSolImgMobile
     },
     title: 'Project Del Sol',
     date: 'Januar 2016'
@@ -92,9 +92,9 @@ const allProjects = [
     key: 'tower228b',
     featured: true,
     img: {
-      desktop: eeboxImgDesktop,
-      tablet: eeboxImgTablet,
-      mobile: eeboxImgMobile
+      desktop: tower228bImgDesktop,
+      tablet: tower228bImgTablet,
+      mobile: tower228bImgMobile
     },
     title: '228B Tower',
     date: 'April 2015'
@@ -103,9 +103,9 @@ const allProjects = [
     key: 'prototype',
     featured: true,
     img: {
-      desktop: federalImgDesktop,
-      tablet: federalImgTablet,
-      mobile: federalImgMobile
+      desktop: prototypeImgDesktop,
+      tablet: prototypeImgTablet,
+      mobile: prototypeImgMobile
     },
     title: 'Le Prototype',
     date: 'October 2015'
@@ -113,9 +113,9 @@ const allProjects = [
   {
     key: 'edelweiss',
     img: {
-      desktop: hypersImgDesktop,
-      tablet: hypersImgTablet,
-      mobile: hypersImgMobile
+      desktop: edelweissImgDesktop,
+      tablet: edelweissImgTablet,
+      mobile: edelweissImgMobile
     },
     title: 'Grand Edelweiss Hotel',
     date: 'December 2013'
@@ -133,9 +133,9 @@ const allProjects = [
   {
     key: 'hypers',
     img: {
-      desktop: paramourImgDesktop,
-      tablet: paramourImgTablet,
-      mobile: paramourImgMobile
+      desktop: hypersImgDesktop,
+      tablet: hypersImgTablet,
+      mobile: hypersImgMobile
     },
     title: 'Hypers',
     date: 'Januar 2012'
@@ -143,9 +143,9 @@ const allProjects = [
   {
     key: 'sxiv',
     img: {
-      desktop: seraphImgDesktop,
-      tablet: seraphImgTablet,
-      mobile: seraphImgMobile
+      desktop: sxivImgDesktop,
+      tablet: sxivImgTablet,
+      mobile: sxivImgMobile
     },
     title: 'SXIV Tower',
     date: 'March 2011'
@@ -153,9 +153,9 @@ const allProjects = [
   {
     key: 'trinity',
     img: {
-      desktop: sxivImgDesktop,
-      tablet: sxivImgTablet,
-      mobile: sxivImgMobile
+      desktop: trinityImgDesktop,
+      tablet: trinityImgTablet,
+      mobile: trinityImgMobile
     },
     title: 'Trinity Bank Tower',
     date: 'September 2010'
@@ -163,9 +163,9 @@ const allProjects = [
   {
     key: 'paramour',
     img: {
-      desktop: trinityImgDesktop,
-      tablet: trinityImgTablet,
-      mobile: trinityImgMobile
+      desktop: paramourImgDesktop,
+      tablet: paramourImgTablet,
+      mobile: paramourImgMobile
     },
     title: 'Project Paramour',
     date: 'February 2008'
