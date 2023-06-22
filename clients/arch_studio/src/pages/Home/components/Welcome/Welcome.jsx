@@ -47,12 +47,20 @@ const SubTitle = styled.h2`
 
   z-index: 1;
   position: relative;
+
+  @media only screen and (max-width: 600px) {
+    width: unset;
+  }
 `
 
 const Text = styled.div`
   color: var(--dark-grey);
   width: 445px;
   margin-top: 40px;
+
+  @media only screen and (max-width: 600px) {
+    width: unset;
+  }
 `
 
 const Image = styled.img`

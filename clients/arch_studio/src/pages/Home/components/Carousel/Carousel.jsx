@@ -54,6 +54,7 @@ const Text = styled.div`
 
   @media only screen and (max-width: 600px) {
     margin-bottom: 84px;
+    width: unset;
   }
 `
 

@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  overflow-x: hidden;
   --font-family: 'League Spartan', serif;
 
   font-family: var(--font-family);
@@ -36,6 +37,10 @@ body {
 
   @media only screen and (max-width: 600px) {
     --content-width: 100vw;
+  }
+
+  &.prevent-scroll {
+    overflow: hidden;
   }
 }
 
@@ -145,5 +150,15 @@ textarea {
   }
   to {
     opacity: 0;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translate(100vw, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
   }
 }

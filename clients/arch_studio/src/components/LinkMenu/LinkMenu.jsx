@@ -41,9 +41,9 @@ export function LinkMenu() {
 
   return (
     <>
-      {menuRoutes.map(({ label, path, key }) => (
+      {menuRoutes.map(({ label, path, key }, index) => (
         <MenuItem
-          className={path === location.pathname ? 'active' : ''}
+          className={path === location.pathname ? `active child-${index}` : `child-${index}`}
           key={key}
           to={path}
         >
