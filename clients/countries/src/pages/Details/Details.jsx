@@ -128,6 +128,12 @@ const Badge = styled.div`
   padding: 4px 28px;
   font-size: 14px;
   line-height: 18px;
+  cursor: pointer;
+  transition: 0.5s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `
 
 const PLACEHOLDER = 'N/A'
@@ -206,7 +212,9 @@ export function Details() {
                     return null
                   }
 
-                  return <Badge>{resolvedCountry.name.common}</Badge>
+                  const borderName = resolvedCountry.name.common
+
+                  return <Badge onClick={() => navigate(`/${borderName}`)}>{borderName}</Badge>
                 })}
               </Borders>
             </BordersContainer>
