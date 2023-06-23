@@ -114,7 +114,7 @@ export function MainInfo() {
         </li>
       </StyledList>
       <Link
-        href="/cv/cv.pdf"
+        href="/cv/CV - Jaan Toming.pdf"
         download
         target="_blank"
       >
