@@ -1,4 +1,5 @@
-yarn --cwd service install
+yarn
+
 yarn --cwd service build
 
 dir="$( dirname -- "$0"; )"

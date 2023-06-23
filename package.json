@@ -1,6 +1,7 @@
 {
   "name": "jt-demo",
   "version": "1.0.0",
+  "private": true,
   "repository": "https://github.com/jtoming830/jt-demo.git",
   "author": "Jaan Toming <jtoming@gmail.com>",
   "license": "UNLICENSED",
@@ -8,5 +9,6 @@
     "build": "./scripts/build.sh",
     "start": "node service/dist/main",
     "start:prod": "node service/dist/main"
-  }
+  },
+  "workspaces": ["clients/arch_studio", "clients/countries", "clients/cv", "clients/movies", "clients/sample_landing", "service"]
 }
