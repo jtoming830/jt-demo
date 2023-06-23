@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 import { About } from '../About'
 import { Resume } from '../Resume'
-import img from '../../images/photo.png'
+import img from '../../images/photo.jpg'
 import { Section } from '../../components'
 
 const BgContainer = styled.div`

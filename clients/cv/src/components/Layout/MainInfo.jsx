@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import photo from '../../images/photo.png'
+import photo from '../../images/photo.jpg'
 import person from '../../icons/person.svg'
 import { List } from '../List'
 import { getExperience } from '../../utils'
