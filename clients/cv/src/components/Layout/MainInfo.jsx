@@ -3,6 +3,7 @@ import photo from '../../images/photo.png'
 import person from '../../icons/person.svg'
 import { List } from '../List'
 import { getExperience } from '../../utils'
+import { Button } from '../Button'
 
 const Container = styled.div`
   padding: 20px;
@@ -72,6 +73,14 @@ const Image = styled.img`
   }
 `
 
+const StyledButton = styled(Button)`
+  width: fit-content;
+`
+
+const Link = styled.a`
+  text-decoration: none;
+`
+
 export function MainInfo() {
   const experience = getExperience()
 
@@ -104,6 +113,13 @@ export function MainInfo() {
           <SubText> +372 5813 9096</SubText>
         </li>
       </StyledList>
+      <Link
+        href="/cv/cv.pdf"
+        download
+        target="_blank"
+      >
+        <StyledButton>Download CV</StyledButton>
+      </Link>
     </Container>
   )
 }
