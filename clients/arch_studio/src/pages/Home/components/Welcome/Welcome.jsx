@@ -7,7 +7,7 @@ const Container = styled.div`
   padding-bottom: 200px;
   position: relative;
   display: flex;
-  gap: 125px;
+  gap: 124px;
 
   @media only screen and (max-width: 600px) {
     padding: 72px 32px 114px;
@@ -34,7 +34,7 @@ const StyledUnderline = styled(Underline)`
 `
 
 const Content = styled.div`
-  margin-left: 190px;
+  margin-left: 180px;
 
   @media only screen and (max-width: 1200px) {
     margin-left: 0;
