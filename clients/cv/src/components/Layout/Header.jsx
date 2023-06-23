@@ -118,21 +118,21 @@ export function Header() {
   return (
     <Container className="fadeIn">
       <LeftContainer>
-        <HomeContainer to={homeRoute.path}>
+        <HomeContainer to={homeRoute.fullPath}>
           <Home
             width={15}
             height={15}
           />
         </HomeContainer>
         <Menu>
-          {routes.map(({ key, path, label, home }) => {
-            const selected = path === location.pathname
+          {routes.map(({ key, fullPath, label, home }) => {
+            const selected = fullPath === location.pathname
 
             return !home ? (
               <StyledLink
                 key={key}
                 className={selected ? 'selected' : ''}
-                to={selected ? null : path}
+                to={selected ? null : fullPath}
               >
                 {label}
               </StyledLink>

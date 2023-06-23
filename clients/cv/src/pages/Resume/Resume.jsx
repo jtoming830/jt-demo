@@ -33,6 +33,10 @@ const ListItem = styled.li`
   }
 `
 
+const StyledTitle = styled(Title)`
+  margin-left: 10px;
+`
+
 const ListItemContent = styled.div`
   margin-left: 10px;
 `
@@ -49,12 +53,12 @@ const Time = styled.div`
   font-size: 13px;
 `
 
-export default function Resume() {
+export default function Resume({ className }) {
   return (
-    <Section>
+    <Section className={className}>
       <List>
         <ListItem>
-          <Title style={{ marginLeft: 10 }}>Working History</Title>
+          <StyledTitle>Working History</StyledTitle>
         </ListItem>
         <ListItem>
           <ListItemContent>
@@ -63,10 +67,6 @@ export default function Resume() {
             <p>- Fullstack outsource development of different projects for Apple and Formelife</p>
             <p>- Both frontend and backend for highly-customizable CRM with third-party application integrations</p>
             <p>- Frontend for user life activity tracking tool</p>
-            <p>
-              - Close interaction with product owners and designers to find the best solutions to accomplish business
-              requests{' '}
-            </p>
             <p>- Successfully mentored 2 new teammates </p>
             <p>- Maintain libraries of shared components including form builder/renderer engine</p>
             <p>- Created component library from scratch </p>
@@ -90,11 +90,11 @@ export default function Resume() {
             <p>- Feature full delivery cycle - from user request analysis to implementation and release support</p>
             <p>- Activity in bug fixing - about 30% of team bug fixes</p>
             <p>- Activity in process optimisation - created various internal tools to improve development processes</p>
+            <p>- Successfully mentored new teammate</p>
+            <p>- Wrote a complete guide to internal systems to make onboarding processes easier</p>
             <p>- Accessibility testing (WCAG 2.1, Section 508, EN 301 549)</p>
             <p>- Write demos</p>
             <p>- Communicate with customers in the support center and GitHub</p>
-            <p>- Successfully mentored new teammate</p>
-            <p>- Wrote a complete guide to internal systems to make onboarding processes easier</p>
           </ListItemContent>
         </ListItem>
         <ListItem>

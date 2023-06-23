@@ -145,8 +145,6 @@ export function Details() {
 
   const country = countries.find((_country) => _country.name.common === name)
 
-  console.log(country)
-
   return country ? (
     <Container>
       <BackButton onClick={() => navigate(-1)}>

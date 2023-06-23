@@ -1,10 +1,14 @@
-import { BrowserRouter } from 'react-router-dom'
-import { Layout } from './components'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { hiddenRoutes } from './router'
 
 function App() {
   return (
     <BrowserRouter>
-      <Layout />
+      <Routes>
+        {hiddenRoutes.map((props) => (
+          <Route {...props} />
+        ))}
+      </Routes>
     </BrowserRouter>
   )
 }

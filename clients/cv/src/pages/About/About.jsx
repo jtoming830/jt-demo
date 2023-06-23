@@ -33,7 +33,7 @@ const SKILLS = [
   'Team Leading'
 ]
 
-export default function About() {
+export default function About({ hideSkills }) {
   return (
     <>
       <Section title="About Me">
@@ -56,13 +56,15 @@ export default function About() {
         </p>
         <p>Competent in Nest.js with Typeorm and PostgreSQL.</p>
       </Section>
-      <Section title="Skills">
-        <SkillsContainer>
-          {SKILLS.map((skill) => (
-            <Badge key={skill}>{skill}</Badge>
-          ))}
-        </SkillsContainer>
-      </Section>
+      {!hideSkills && (
+        <Section title="Skills">
+          <SkillsContainer>
+            {SKILLS.map((skill) => (
+              <Badge key={skill}>{skill}</Badge>
+            ))}
+          </SkillsContainer>
+        </Section>
+      )}
     </>
   )
 }

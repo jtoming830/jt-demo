@@ -8,12 +8,12 @@ const Container = styled.div`
 `
 
 const Content = styled.div`
-  margin-top: ${(props) => (props.$hasTitle ? '30px' : 'none')};
+  margin-top: ${(props) => (props.$hasTitle ? '30px' : '0')};
 `
 
-export function Section({ title, children }) {
+export function Section({ title, children, className }) {
   return (
-    <Container>
+    <Container className={className}>
       <Title>{title}</Title>
       <Content $hasTitle={!!title}>{children}</Content>
     </Container>
