@@ -27,6 +27,14 @@ const HeaderContent = styled.div`
   width: 842px;
 `
 
+const Image = styled.div`
+  height: 200px;
+  width: 200px;
+  background: url(${img}) no-repeat;
+  background-size: cover;
+  background-position-y: -10px;
+`
+
 const Container = styled.div`
   margin: auto;
 
@@ -134,10 +142,7 @@ export function CV() {
             <h1>Jaan Toming</h1>
             <h2>Frontend Developer</h2>
           </div>
-          <img
-            src={img}
-            height={200}
-          />
+          <Image />
         </HeaderContent>
       </Header>
       <Container>
