@@ -12,26 +12,25 @@ const BgContainer = styled.div`
 `
 
 const Header = styled.div`
-  background: var(--brand-color);
+  margin: auto;
+  margin-bottom: 80px;
+`
+
+const HeaderContent = styled.div`
+  color: var(--primary-text-color);
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  color: var(--primary-text-color);
-
-  padding-left: 40px;
   margin: auto;
-  margin-bottom: 80px;
-
-  width: 800px;
-  box-sizing: border-box;
+  width: 842px;
 `
 
 const Container = styled.div`
   margin: auto;
 
-  width: 800px;
+  width: 842px;
 
   z-index: 0;
   position: relative;
@@ -83,6 +82,14 @@ const StyledResume = styled(Resume)`
   }
 `
 
+const Link = styled.a`
+  display: block;
+
+  & + & {
+    margin-top: 10px;
+  }
+`
+
 const socials = [
   {
     link: 'https://jtoming.t.me/',
@@ -122,31 +129,32 @@ export function CV() {
   return (
     <BgContainer>
       <Header>
-        <div>
-          <h1>Jaan Toming</h1>
-          <h2>Frontend Developer</h2>
-        </div>
-        <img
-          src={img}
-          height={200}
-        />
+        <HeaderContent>
+          <div>
+            <h1>Jaan Toming</h1>
+            <h2>Frontend Developer</h2>
+          </div>
+          <img
+            src={img}
+            height={200}
+          />
+        </HeaderContent>
       </Header>
       <Container>
         <FlexContainer>
           <LeftColumn>
             <Section title="Contacts">
-              <div>
-                <a href="mailto:jtoming@gmail.com">jtoming@gmail.com</a>
-              </div>
-              <div>
-                <a href="tel:+372 5813 9096">+372 5813 9096</a>
-              </div>
+              <Link href="mailto:jtoming@gmail.com">jtoming@gmail.com</Link>
+              <Link href="tel:+372 5813 9096">+372 5813 9096</Link>
             </Section>
             <Section title="Socials">
               {socials.map(({ title, link }) => (
-                <div key={title}>
-                  <a href={link}>{title}</a>
-                </div>
+                <Link
+                  key={title}
+                  href={link}
+                >
+                  {title}
+                </Link>
               ))}
             </Section>
             <Section title="Skills">
@@ -162,7 +170,7 @@ export function CV() {
                 My GitHub: <a href="https://github.com/jtoming830/jt-demo">https://github.com/jtoming830/jt-demo</a>
               </p>
               <p>
-                My Portfolio: <a href="http://jtoming.me">http://jtoming.me</a>
+                My Portfolio: <a href="http://jtoming.me/cv/portfolio">http://jtoming.me</a>
               </p>
             </Section>
             <Section title="Education">
@@ -172,7 +180,7 @@ export function CV() {
           </div>
         </FlexContainer>
 
-        <div style={{ marginTop: 200, paddingTop: 10 }}>
+        <div style={{ marginTop: 200, paddingTop: 40 }}>
           <StyledResume />
         </div>
       </Container>
