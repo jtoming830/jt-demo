@@ -12,6 +12,7 @@ import mobileHero from 'assets/contact/mobile/image-hero.jpg'
 
 const Image = styled.img`
   margin: 200px 0;
+  width: 100%;
 
   content: url(${mapImgDesktop});
 
@@ -22,7 +23,6 @@ const Image = styled.img`
   @media only screen and (max-width: 600px) {
     margin: 70px 0;
     content: url(${mapImgMobile});
-    width: 100%;
     height: calc(367 / 375 * (var(--content-width)));
   }
 `
