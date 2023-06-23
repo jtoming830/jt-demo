@@ -1,0 +1,45 @@
+{
+  "name": "photosnap",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "/photosnap",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint --ext .js,.jsx src",
+    "prepare-svg": "npx @svgr/cli --ignore-existing --ext jsx --out-dir ./src/icons -- ./icons"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.13.0",
+    "react-scripts": "5.0.1",
+    "sass": "^1.63.4",
+    "styled-components": "^6.0.0-rc.3"
+  },
+  "devDependencies": {
+    "@svgr/cli": "^8.0.1",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "2.8.7"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

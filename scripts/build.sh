@@ -12,3 +12,4 @@ $dir/build_client.sh movies
 $dir/build_client.sh sample_landing
 $dir/build_client.sh countries
 $dir/build_client.sh arch_studio
+$dir/build_client.sh photosnap

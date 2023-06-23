@@ -17,6 +17,7 @@ const serveStatic = (folder: string) =>
     serveStatic('sample_landing'),
     serveStatic('countries'),
     serveStatic('arch_studio'),
+    serveStatic('photosnap'),
     MoviesModule,
   ],
   controllers: [AppController],

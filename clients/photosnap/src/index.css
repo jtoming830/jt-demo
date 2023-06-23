@@ -1,0 +1,121 @@
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --black: #000000;
+  --white: #FFFFFF;
+
+  --black-secondary: #00000099;
+  --white-secondary: #FFFFFF99;
+
+  --grey: #DFDFDF;
+
+  color: var(--black);
+
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  line-height: 25px;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 4.17px;
+  text-align: left;
+  line-height: 48px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  line-height: 25px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0px;
+  text-align: left;
+  line-height: 25px;
+}
+
+h4, a {
+  font-size: 12px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 2px;
+  text-align: left;
+}
+
+a {
+  color: var(--black);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@keyframes enter {
+  
+}
+
+@keyframes leave {
+  
+}
+
+.page-enter {
+  animation: 0s enter forwards;
+}
+
+.page-leave {
+  animation: 0s leave forwards;
+}
+
+@keyframes slide-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
