@@ -54,11 +54,13 @@ const MobileMenuContainer = styled.div`
   height: -webkit-fill-available;
   background: var(--image-darken-color);
   opacity: 0;
+  visibility: hidden;
   transition: 0.5s ease;
 
   z-index: 1;
 
   &.visible {
+    visibility: visible;
     opacity: 1;
   }
 `
