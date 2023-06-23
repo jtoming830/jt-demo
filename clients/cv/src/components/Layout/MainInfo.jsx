@@ -116,7 +116,6 @@ export function MainInfo() {
       <Link
         href="/cv/CV - Jaan Toming.pdf"
         download
-        target="_blank"
       >
         <StyledButton>Download CV</StyledButton>
       </Link>
