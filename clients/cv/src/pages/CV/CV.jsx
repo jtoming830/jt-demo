@@ -126,9 +126,9 @@ const SKILLS = [
   'Redux',
   'SASS',
   'SCSS',
-  'Pixel Perfect Design',
   'Nestjs',
   'SQL',
+  'Pixel Perfect Design',
   'Solution Architect',
   'Team Leading'
 ]

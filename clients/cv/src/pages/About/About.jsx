@@ -26,9 +26,9 @@ const SKILLS = [
   'Redux',
   'SASS',
   'SCSS',
-  'Pixel Perfect Design',
   'Nestjs',
   'SQL',
+  'Pixel Perfect Design',
   'Solution Architect',
   'Team Leading'
 ]
@@ -50,9 +50,9 @@ export default function About({ hideSkills }) {
           Angular and Vue.
         </p>
         <p>
-          Experienced with everything from must-have React stack - Redux (prefer @redux-toolkit), react-router,
-          styled-components and different UI kits - Ant Design, Material UI, Bootstrap. Also have a good knowledge of CSS and
-          its pre-processors - SASS and SCSS.
+          Experienced with the React stack - Redux (prefer @redux-toolkit), react-router, styled-components and different UI
+          kits - Ant Design, Material UI, Bootstrap. Also have a good knowledge of CSS and its pre-processors - SASS and
+          SCSS.
         </p>
         <p>Competent in Nest.js with Typeorm and PostgreSQL.</p>
       </Section>

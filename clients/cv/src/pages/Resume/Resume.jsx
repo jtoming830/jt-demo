@@ -65,11 +65,11 @@ export default function Resume({ className }) {
             <JobTitle>Fullstack Developer - NVP Software LLC</JobTitle>
             <Time>Apr 2021 - Present</Time>
             <p>- Fullstack outsource development of different projects for Apple and Formelife</p>
-            <p>- Both frontend and backend for highly-customizable CRM with third-party application integrations</p>
-            <p>- Frontend for user life activity tracking tool</p>
-            <p>- Successfully mentored 2 new teammates </p>
+            <p>- Both frontend and backend for a highly-customizable CRM with third-party application integrations</p>
+            <p>- Frontend for a life activity tracking tool</p>
+            <p>- Successfully mentored 2 new teammates</p>
             <p>- Maintain libraries of shared components including form builder/renderer engine</p>
-            <p>- Created component library from scratch </p>
+            <p>- Created a UI component library from scratch</p>
             <p>- Designed API for shared components </p>
             <p>
               - Created architecture for form builder/renderer engine (similiar to Form.io) used by different teams in 4
@@ -81,19 +81,19 @@ export default function Resume({ className }) {
           <ListItemContent>
             <JobTitle>Frontend Developer - Developer Express, Inc.</JobTitle>
             <Time>Apr 2019 - Apr 2021</Time>
-            <p>- Support library of Javascript cross-framework components</p>
+            <p>- Supported a library of Javascript cross-framework components</p>
             <p>
-              - Created different features (d'n'd, editing and sorting enhancements) for components (DataGrid, PivotGrid,
-              TreeList)
+              - Created different features (Drag and Drop, state management, editing and sorting enhancements) for components
+              (DataGrid, PivotGrid, TreeList)
             </p>
-            <p>- Made API of the components more React-like to make it usement in React more comfortable</p>
+            <p>- Made the API of the components more React-like to make it usage in React more comfortable</p>
             <p>- Feature full delivery cycle - from user request analysis to implementation and release support</p>
             <p>- Activity in bug fixing - about 30% of team bug fixes</p>
             <p>- Activity in process optimisation - created various internal tools to improve development processes</p>
-            <p>- Successfully mentored new teammate</p>
+            <p>- Successfully mentored a new teammate</p>
             <p>- Wrote a complete guide to internal systems to make onboarding processes easier</p>
             <p>- Accessibility testing (WCAG 2.1, Section 508, EN 301 549)</p>
-            <p>- Write demos</p>
+            <p>- Designed multiple demo applications and wrote application code in React, Angular and Vue</p>
             <p>- Communicate with customers in the support center and GitHub</p>
           </ListItemContent>
         </ListItem>
