@@ -1,10 +1,11 @@
-import { Controller, Get, Redirect } from '@nestjs/common';
+import { Controller, Get, Req, Response } from '@nestjs/common';
 
 @Controller('/')
 export class AppController {
   @Get()
-  @Redirect('/cv', 301)
-  get() {
-    return null;
+  get(@Req() req, @Response() response) {
+    if (req.path === '/') {
+      return response.redirect(`https://${req.hostname}/cv`);
+    }
   }
 }
