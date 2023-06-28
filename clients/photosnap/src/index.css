@@ -13,6 +13,7 @@ body {
   --white-secondary: #FFFFFF99;
 
   --grey: #DFDFDF;
+  --grey-2: #F5F5F5;
 
   color: var(--black);
 
@@ -33,7 +34,6 @@ h1 {
   font-weight: 700;
   font-style: normal;
   letter-spacing: 4.17px;
-  text-align: left;
   line-height: 48px;
   text-transform: uppercase;
 }
@@ -43,7 +43,6 @@ h2 {
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0px;
-  text-align: left;
   line-height: 25px;
 }
 
@@ -52,7 +51,6 @@ h3 {
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0px;
-  text-align: left;
   line-height: 25px;
 }
 
@@ -61,7 +59,7 @@ h4, a {
   font-weight: 700;
   font-style: normal;
   letter-spacing: 2px;
-  text-align: left;
+  line-height: 16px;
 }
 
 a {
@@ -71,19 +69,31 @@ a {
 }
 
 @keyframes enter {
-  
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes leave {
-  
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
 .page-enter {
-  animation: 0s enter forwards;
+  animation: 1s enter forwards;
 }
 
 .page-leave {
-  animation: 0s leave forwards;
+  animation: 1s leave forwards;
 }
 
 @keyframes slide-left {

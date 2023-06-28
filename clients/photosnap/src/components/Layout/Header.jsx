@@ -1,3 +1,4 @@
+import { Button } from '../Button'
 import { Logo } from 'icons'
 import { Link } from 'react-router-dom'
 import { LINKS, menuRoutes } from 'router'
@@ -15,6 +16,13 @@ const Container = styled.div`
 const Menu = styled.div`
   display: flex;
   gap: 35px;
+
+  > a {
+    transition: 0.5s ease;
+    &:hover {
+      opacity: 0.3;
+    }
+  }
 `
 
 export function Header() {
@@ -33,7 +41,7 @@ export function Header() {
           </Link>
         ))}
       </Menu>
-      <div>Get Invite</div>
+      <Button>Get an invite</Button>
     </Container>
   )
 }

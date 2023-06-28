@@ -2,6 +2,7 @@ import { useContext, useEffect, useRef } from 'react'
 import { Accent } from '../Accent'
 import { styled } from 'styled-components'
 import { Context } from 'context'
+import { LinkButton } from '../LinkButton'
 
 const Container = styled.div`
   margin-top: -1px;
@@ -18,11 +19,13 @@ const Container = styled.div`
 const DescriptionContainer = styled.div`
   width: 45vw;
   display: flex;
+  height: fit-content;
+  margin: auto;
 `
 
 const StyledAccent = styled(Accent)`
-  height: 360px;
-  margin: auto 0;
+  height: unset;
+  margin: 0;
 `
 
 const Description = styled.div`
@@ -54,9 +57,18 @@ const Text = styled.div`
   }
 
   .in-viewport & {
-    animation: 2s ${getSlideAnimation} 1s forwards;
+    animation: 2s ${getSlideAnimation} 0.5s forwards;
   }
   margin-top: 20px;
+`
+
+const StyledLinkButton = styled(LinkButton)`
+  margin-top: 48px;
+
+  opacity: 0;
+  .in-viewport & {
+    animation: 2s ${getSlideAnimation} 1s forwards;
+  }
 `
 
 const Image = styled.div`
@@ -64,7 +76,7 @@ const Image = styled.div`
   --width: 55vw;
   width: var(--width);
   height: ${(props) => `calc(${props.$imgSize.height} / ${props.$imgSize.width} * var(--width))`};
-  background-size: contain;
+  background-size: cover;
 
   opacity: 0;
   .in-viewport & {
@@ -72,7 +84,7 @@ const Image = styled.div`
   }
 `
 
-export function Hero({ img, title, text, reverse, light, accent, imgSize }) {
+export function Hero({ img, title, text, reverse, light, accent, imgSize, linkText, linkTo }) {
   const ref = useRef()
   const { observer } = useContext(Context)
 
@@ -95,6 +107,15 @@ export function Hero({ img, title, text, reverse, light, accent, imgSize }) {
         <Description>
           <Title $reverse={reverse}>{title}</Title>
           <Text $reverse={reverse}>{text}</Text>
+          {linkTo && (
+            <StyledLinkButton
+              $reverse={reverse}
+              light={!light}
+              to={linkTo}
+            >
+              {linkText}
+            </StyledLinkButton>
+          )}
         </Description>
       </DescriptionContainer>
       <Image

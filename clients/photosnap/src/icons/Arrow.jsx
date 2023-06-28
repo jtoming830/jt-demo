@@ -10,7 +10,7 @@ const SvgArrow = (props) => (
     <path
       fill="none"
       fillRule="evenodd"
-      stroke="#000"
+      stroke="currentColor"
       d="M0 7h41.864m-6.436-6 6 6-6 6"
     />
   </svg>

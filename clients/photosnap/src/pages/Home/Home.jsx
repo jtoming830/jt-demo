@@ -1,7 +1,15 @@
-import { Hero } from 'components'
+import { FeaturesOverview, Gallery, Hero } from 'components'
 import createAndShareImg from 'assets/home/desktop/create-and-share.jpg'
 import beautifulStoriesImg from 'assets/home/desktop/beautiful-stories.jpg'
 import designedForEveryoneImg from 'assets/home/desktop/designed-for-everyone.jpg'
+import { stories } from 'stories'
+import { features } from 'features'
+import { styled } from 'styled-components'
+import { LINKS } from 'router'
+
+const StyledFeaturesOverview = styled(FeaturesOverview)`
+  margin: 160px auto;
+`
 
 export function Home() {
   return (
@@ -21,7 +29,7 @@ export function Home() {
         img={{ desktop: beautifulStoriesImg }}
         imgSize={{ width: 830, height: 600 }}
         linkText="View the stories"
-        linkTo="#"
+        linkTo={LINKS.STORIES}
         light
         reverse
       />
@@ -31,9 +39,14 @@ export function Home() {
         img={{ desktop: designedForEveryoneImg }}
         imgSize={{ width: 830, height: 600 }}
         linkText="View the stories"
-        linkTo="#"
+        linkTo={LINKS.STORIES}
         light
       />
+      <Gallery
+        hideDate
+        items={stories.slice(0, 4)}
+      />
+      <StyledFeaturesOverview items={features.slice(0, 3)} />
     </>
   )
 }

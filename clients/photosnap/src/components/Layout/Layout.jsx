@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { routes } from 'router'
 import { useEffect, useState } from 'react'
