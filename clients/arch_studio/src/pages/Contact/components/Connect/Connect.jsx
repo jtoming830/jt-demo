@@ -17,6 +17,10 @@ const Container = styled.div`
 const Title = styled.h2`
   width: 350px;
 
+  @media only screen and (max-width: 1200px) {
+    width: 100%;
+  }
+
   @media only screen and (max-width: 600px) {
     width: 250px;
   }

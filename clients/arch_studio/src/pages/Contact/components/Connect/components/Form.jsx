@@ -3,7 +3,11 @@ import { Button } from 'components'
 import { IconArrow } from 'icons'
 
 const Container = styled.div`
-  width: var(--content-width);
+  width: 730px;
+
+  @media only screen and (max-width: 1200px) {
+    width: var(--content-width);
+  }
 
   @media only screen and (max-width: 600px) {
     width: calc(var(--content-width) - 64px);
