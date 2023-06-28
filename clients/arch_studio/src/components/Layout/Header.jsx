@@ -120,7 +120,7 @@ export function Header() {
             navigate(LINKS.HOME)
           }}
         />
-        <Menu>
+        <Menu onClick={(e) => e.stopPropagation()}>
           <LinkMenu />
         </Menu>
         <MobileIcon>
