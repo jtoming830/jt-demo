@@ -71,13 +71,13 @@ export function MobileMenu() {
         />
       </Container>
       <Dropdown className={dropdownClassName}>
-        {routes.map(({ path, home, key, label }) => {
-          const selected = path === location.pathname
+        {routes.map(({ fullPath, home, key, label }) => {
+          const selected = fullPath === location.pathname
           return home ? null : (
             <StyledLink
               onClick={onClick}
               key={key}
-              to={path}
+              to={fullPath}
               $selected={selected}
             >
               {label}
