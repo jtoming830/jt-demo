@@ -18,6 +18,12 @@ const Plans = styled.div`
 
   margin: 48px auto 0;
   width: fit-content;
+
+  @media only screen and (max-width: 1200px) {
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 40px;
+  }
 `
 
 const options = Object.values(MODES)

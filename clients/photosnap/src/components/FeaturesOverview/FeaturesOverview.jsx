@@ -5,12 +5,15 @@ const Container = styled.div`
   flex-wrap: wrap;
 
   width: 1110px;
-
   gap: 30px;
 `
 
 const Card = styled.div`
   width: 350px;
+
+  @media only screen and (max-width: 1200px) {
+    width: 340px;
+  }
 
   text-align: center;
 `

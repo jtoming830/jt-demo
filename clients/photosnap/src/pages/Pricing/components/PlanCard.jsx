@@ -5,6 +5,24 @@ import { Accent, Button } from 'components'
 const Container = styled.div`
   &:not(.featured) {
     padding: 32px 0;
+
+    @media only screen and (max-width: 1200px) {
+      padding: 0;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    width: 690px;
+    display: flex;
+  }
+`
+
+const StyledAccent = styled(Accent)`
+  @media only screen and (max-width: 1200px) {
+    &.horizontal {
+      width: 6px;
+      height: unset;
+    }
   }
 `
 
@@ -20,7 +38,34 @@ const Content = styled.div`
 
   width: 350px;
   box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
   text-align: center;
+
+  @media only screen and (max-width: 1200px) {
+    padding: 40px;
+    width: 100%;
+
+    .featured & {
+      padding: 40px 34px;
+    }
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
+
+    text-align: left;
+  }
+`
+
+const DescriptionContainer = styled.div`
+  @media only screen and (max-width: 1200px) {
+    width: 270px;
+  }
 `
 
 const Text = styled.div`
@@ -31,8 +76,11 @@ const Description = styled(Text)`
   margin-top: 18px;
 `
 
-const PriceContainer = styled.div`
-  margin: 40px 0;
+const StyledButton = styled(Button)`
+  @media only screen and (max-width: 1200px) {
+    width: 270px;
+    text-align: center;
+  }
 `
 
 export function PlanCard({ name, text, basePrice, yearlyPrice, paymentMode, featured }) {
@@ -49,15 +97,17 @@ export function PlanCard({ name, text, basePrice, yearlyPrice, paymentMode, feat
 
   return (
     <Container className={featured ? 'featured' : ''}>
-      {featured && <Accent />}
+      {featured && <StyledAccent />}
       <Content>
-        <h2>{name}</h2>
-        <Description>{text}</Description>
-        <PriceContainer>
+        <DescriptionContainer>
+          <h2>{name}</h2>
+          <Description>{text}</Description>
+        </DescriptionContainer>
+        <div>
           <h1>${price}</h1>
           <Text>{priceText}</Text>
-        </PriceContainer>
-        <Button light={featured}>Pick plan</Button>
+        </div>
+        <StyledButton light={featured}>Pick plan</StyledButton>
       </Content>
     </Container>
   )

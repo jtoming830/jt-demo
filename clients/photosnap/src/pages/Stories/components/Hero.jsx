@@ -1,15 +1,29 @@
-import img from 'assets/stories/desktop/moon-of-appalacia.jpg'
+import desktopImg from 'assets/stories/desktop/moon-of-appalacia.jpg'
+import tabletImg from 'assets/stories/tablet/moon-of-appalacia.jpg'
+import mobileImg from 'assets/stories/mobile/moon-of-appalacia.jpg'
 import { LinkButton } from 'components'
 import { styled } from 'styled-components'
 
 const Container = styled.div`
-  padding: 122px 112px;
+  display: flex;
+  align-items: center;
+
   box-sizing: border-box;
-  height: calc(650 / 1440 * 100vw);
-  background: url(${img}) no-repeat;
-  background-size: cover;
 
   color: var(--white);
+
+  padding: 0 112px;
+  height: calc(650 / 1440 * 100vw);
+  --img-url: url(${desktopImg});
+
+  @media only screen and (max-width: 1200px) {
+    padding: 0 40px;
+    height: calc(650 / 768 * 100vw);
+    --img-url: url(${tabletImg});
+  }
+
+  background: url(${desktopImg}) no-repeat;
+  background-size: cover;
 `
 
 const Content = styled.div`

@@ -8,8 +8,14 @@ const Container = styled.div`
 `
 
 const Card = styled.div`
-  width: 25vw;
-  height: calc(500 / 360 * 25vw);
+  --width: 25vw;
+
+  /* @media only screen and (max-width: 1200px) {
+    --width: 50vw;
+  } */
+
+  width: var(--width);
+  height: calc(500 / 360 * var(--width));
   background: linear-gradient(#00000000, #000000a8), url(${(props) => props.$img}) no-repeat;
   background-size: cover;
   background-blend-mode: darken;

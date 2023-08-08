@@ -17,7 +17,7 @@ const Container = styled.div`
 `
 
 const DescriptionContainer = styled.div`
-  width: 45vw;
+  flex-grow: 1;
   display: flex;
   height: fit-content;
   margin: auto;
@@ -72,10 +72,21 @@ const StyledLinkButton = styled(LinkButton)`
 `
 
 const Image = styled.div`
-  background: url(${(props) => props.$img.desktop}) no-repeat;
+  --img-url: url(${(props) => props.$img.desktop});
   --width: 55vw;
+  --image-width: ${(props) => props.$imgSize.desktop.width};
+  --image-height: ${(props) => props.$imgSize.desktop.height};
+
+  @media only screen and (max-width: 1200px) {
+    --img-url: url(${(props) => props.$img.tablet});
+    --width: 35vw;
+    --image-width: ${(props) => props.$imgSize.tablet.width};
+    --image-height: ${(props) => props.$imgSize.tablet.height};
+  }
+
+  background: var(--img-url) no-repeat;
   width: var(--width);
-  height: ${(props) => `calc(${props.$imgSize.height} / ${props.$imgSize.width} * var(--width))`};
+  height: calc(var(--image-height) / var(--image-width) * var(--width));
   background-size: cover;
 
   opacity: 0;

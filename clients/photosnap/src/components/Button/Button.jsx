@@ -29,6 +29,8 @@ const Container = styled.div`
   height: 40px;
 `
 
-export function Button({ light, children }) {
-  return <Container className={light ? 'light' : ''}>{children}</Container>
+export function Button({ light, children, className }) {
+  const mergedClassName = [className, light && 'light'].filter(Boolean).join(' ')
+
+  return <Container className={mergedClassName}>{children}</Container>
 }
