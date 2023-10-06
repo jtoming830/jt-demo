@@ -1,0 +1,68 @@
+{
+  "add": {
+    "defaultMessage": "Add",
+    "description": "Add button text"
+  },
+  "cancel": {
+    "defaultMessage": "Cancel",
+    "description": "Cancel button text"
+  },
+  "commentField": {
+    "defaultMessage": "Comment",
+    "description": "Comment field text"
+  },
+  "createMovie": {
+    "defaultMessage": "Create Movie",
+    "description": "Create Movie modal title"
+  },
+  "delete": {
+    "defaultMessage": "Delete",
+    "description": "Delete button text"
+  },
+  "descriptionField": {
+    "defaultMessage": "Description",
+    "description": "Description field text"
+  },
+  "editMovie": {
+    "defaultMessage": "Edit Movie",
+    "description": "Edit Movie modal title"
+  },
+  "imageInputPlaceholder": {
+    "defaultMessage": "Image link",
+    "description": "Image link placeholder text"
+  },
+  "no": {
+    "defaultMessage": "No"
+  },
+  "save": {
+    "defaultMessage": "Save",
+    "description": "Save button text"
+  },
+  "scoreField": {
+    "defaultMessage": "Score",
+    "description": "Score field text"
+  },
+  "searchPlaceholder": {
+    "defaultMessage": "Search",
+    "description": "Search placeholder text"
+  },
+  "title": {
+    "defaultMessage": "Movies",
+    "description": "Title in the header"
+  },
+  "titleField": {
+    "defaultMessage": "Title",
+    "description": "Title field text"
+  },
+  "watchedField": {
+    "defaultMessage": "Watched",
+    "description": "Watched field text"
+  },
+  "yearField": {
+    "defaultMessage": "Year",
+    "description": "Year field text"
+  },
+  "yes": {
+    "defaultMessage": "Yes"
+  }
+}

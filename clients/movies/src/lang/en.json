@@ -1,0 +1,19 @@
+{
+  "add": "Add",
+  "cancel": "Cancel",
+  "commentField": "Comment",
+  "createMovie": "Create Movie",
+  "delete": "Delete",
+  "descriptionField": "Description",
+  "editMovie": "Edit Movie",
+  "imageInputPlaceholder": "Image link",
+  "no": "No",
+  "save": "Save",
+  "scoreField": "Score",
+  "searchPlaceholder": "Search",
+  "title": "Movies",
+  "titleField": "Title",
+  "watchedField": "Watched",
+  "yearField": "Year",
+  "yes": "Yes"
+}

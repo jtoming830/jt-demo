@@ -24,6 +24,9 @@ export class MovieEditable {
 
   @Column()
   year: number;
+
+  @Column()
+  watched: boolean;
 }
 
 @Entity('main')

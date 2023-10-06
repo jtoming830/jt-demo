@@ -1,5 +1,7 @@
 import { Input } from 'antd'
+import { useIntl } from 'react-intl'
 import { styled } from 'styled-components'
+import { messages } from '../../../../messages'
 
 const Image = styled.img`
   max-width: 100%;
@@ -10,10 +12,16 @@ const Image = styled.img`
 `
 
 export function ImageInput({ value, onChange }) {
+  const intl = useIntl()
+
   return (
     <div>
-      <Image src={value} />
+      <Image
+        loading="lazy"
+        src={value}
+      />
       <Input
+        placeholder={intl.formatMessage(messages.imageInputPlaceholder)}
         value={value}
         onChange={(e) => onChange(e.target.value)}
       />

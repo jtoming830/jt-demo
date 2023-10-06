@@ -1,9 +1,20 @@
 import { Table as AntdTable } from 'antd'
-import { columns } from './columns'
+import { getColumns } from './columns'
+import styled from 'styled-components'
+import { useIntl } from 'react-intl'
+
+const StyledAntdTable = styled(AntdTable)`
+  tr:hover {
+    cursor: pointer;
+  }
+`
 
 export function Table({ movies, loading, onClick }) {
+  const intl = useIntl()
+  const columns = getColumns(intl)
+
   return (
-    <AntdTable
+    <StyledAntdTable
       columns={columns}
       dataSource={movies}
       loading={loading}

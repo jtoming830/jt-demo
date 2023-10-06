@@ -1,0 +1,19 @@
+{
+  "add": "Добавить",
+  "cancel": "Отмена",
+  "commentField": "Комментарий",
+  "createMovie": "Добавить фильм",
+  "delete": "Удалить",
+  "descriptionField": "Описание",
+  "editMovie": "Редактировать фильм",
+  "imageInputPlaceholder": "Ссылка на изображение",
+  "no": "Нет",
+  "save": "Сохранить",
+  "scoreField": "Оценка",
+  "searchPlaceholder": "Поиск",
+  "title": "Фильмы",
+  "titleField": "Название",
+  "watchedField": "Просмотрено",
+  "yearField": "Год",
+  "yes": "Да"
+}

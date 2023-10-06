@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { styled } from 'styled-components'
 import { createMovie, removeMovie, updateMovie } from '../../../../store/movies'
+import { useIntl } from 'react-intl'
+import { messages } from '../../../../messages'
 
 const Container = styled.div`
   button + button {
@@ -15,6 +17,7 @@ const Container = styled.div`
 
 export function Footer({ movie, onClose }) {
   const dispatch = useDispatch()
+  const intl = useIntl()
 
   const [loading, setLoading] = useState()
   const [deleteLoading, setDeleteLoading] = useState()
@@ -27,6 +30,7 @@ export function Footer({ movie, onClose }) {
         {movie && (
           <Button
             danger
+            type="primary"
             loading={deleteLoading}
             disabled={loading}
             onClick={async () => {
@@ -36,7 +40,7 @@ export function Footer({ movie, onClose }) {
               onClose()
             }}
           >
-            Delete
+            {intl.formatMessage(messages.delete)}
           </Button>
         )}
       </div>
@@ -45,7 +49,7 @@ export function Footer({ movie, onClose }) {
           onClick={onClose}
           disabled={loading || deleteLoading}
         >
-          Cancel
+          {intl.formatMessage(messages.cancel)}
         </Button>
         <Button
           loading={loading}
@@ -60,7 +64,7 @@ export function Footer({ movie, onClose }) {
             onClose()
           }}
         >
-          Save
+          {intl.formatMessage(messages.save)}
         </Button>
       </div>
     </Container>
