@@ -26,7 +26,7 @@ export function EditModal({ open, onClose, movie }) {
   const intl = useIntl()
 
   useEffect(() => {
-    open ? form.setFieldsValue({ ...movie, genre: movie.genre || [] } || { watched: true }) : form.resetFields()
+    open ? form.setFieldsValue({ ...movie, genre: movie?.genre || [] } || { watched: true }) : form.resetFields()
   }, [movie, open, form])
 
   const genreOptions = getGenreOptions(intl)
