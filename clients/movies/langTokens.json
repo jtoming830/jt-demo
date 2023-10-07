@@ -1,11 +1,23 @@
 {
+  "action": {
+    "defaultMessage": "Action"
+  },
   "add": {
     "defaultMessage": "Add",
     "description": "Add button text"
   },
+  "adventure": {
+    "defaultMessage": "Adventure"
+  },
+  "biography": {
+    "defaultMessage": "Biography"
+  },
   "cancel": {
     "defaultMessage": "Cancel",
     "description": "Cancel button text"
+  },
+  "comedy": {
+    "defaultMessage": "Comedy"
   },
   "commentField": {
     "defaultMessage": "Comment",
@@ -15,6 +27,9 @@
     "defaultMessage": "Create Movie",
     "description": "Create Movie modal title"
   },
+  "crime": {
+    "defaultMessage": "Crime"
+  },
   "delete": {
     "defaultMessage": "Delete",
     "description": "Delete button text"
@@ -23,13 +38,36 @@
     "defaultMessage": "Description",
     "description": "Description field text"
   },
+  "drama": {
+    "defaultMessage": "Drama"
+  },
   "editMovie": {
     "defaultMessage": "Edit Movie",
     "description": "Edit Movie modal title"
   },
+  "fantasy": {
+    "defaultMessage": "Fantasy"
+  },
+  "genreField": {
+    "defaultMessage": "Genre",
+    "description": "Genre field text"
+  },
+  "history": {
+    "defaultMessage": "History"
+  },
+  "horror": {
+    "defaultMessage": "Horror"
+  },
   "imageInputPlaceholder": {
     "defaultMessage": "Image link",
     "description": "Image link placeholder text"
+  },
+  "linksField": {
+    "defaultMessage": "Links",
+    "description": "Links field text"
+  },
+  "mystery": {
+    "defaultMessage": "Mystery"
   },
   "no": {
     "defaultMessage": "No"
@@ -38,6 +76,9 @@
     "defaultMessage": "Save",
     "description": "Save button text"
   },
+  "sci-fi": {
+    "defaultMessage": "Sci-Fi"
+  },
   "scoreField": {
     "defaultMessage": "Score",
     "description": "Score field text"
@@ -45,6 +86,9 @@
   "searchPlaceholder": {
     "defaultMessage": "Search",
     "description": "Search placeholder text"
+  },
+  "thriller": {
+    "defaultMessage": "Thriller"
   },
   "title": {
     "defaultMessage": "Movies",

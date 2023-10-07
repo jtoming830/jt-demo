@@ -1,7 +1,58 @@
+// this file contains all definitions for intl messages
 import { defineMessages } from 'react-intl'
 
-// this file contains all definitions for intl messages
-export const messages = defineMessages({
+const genres = defineMessages({
+  comedy: {
+    id: 'comedy',
+    defaultMessage: 'Comedy'
+  },
+  horror: {
+    id: 'horror',
+    defaultMessage: 'Horror'
+  },
+  fantasy: {
+    id: 'fantasy',
+    defaultMessage: 'Fantasy'
+  },
+  drama: {
+    id: 'drama',
+    defaultMessage: 'Drama'
+  },
+  action: {
+    id: 'action',
+    defaultMessage: 'Action'
+  },
+  ['sci-fi']: {
+    id: 'sci-fi',
+    defaultMessage: 'Sci-Fi'
+  },
+  crime: {
+    id: 'crime',
+    defaultMessage: 'Crime'
+  },
+  biography: {
+    id: 'biography',
+    defaultMessage: 'Biography'
+  },
+  history: {
+    id: 'history',
+    defaultMessage: 'History'
+  },
+  adventure: {
+    id: 'adventure',
+    defaultMessage: 'Adventure'
+  },
+  thriller: {
+    id: 'thriller',
+    defaultMessage: 'Thriller'
+  },
+  mystery: {
+    id: 'mystery',
+    defaultMessage: 'Mystery'
+  }
+})
+
+const common = defineMessages({
   title: {
     id: 'title',
     defaultMessage: 'Movies',
@@ -50,6 +101,11 @@ export const messages = defineMessages({
     defaultMessage: 'Title',
     description: 'Title field text'
   },
+  genreField: {
+    id: 'genreField',
+    defaultMessage: 'Genre',
+    description: 'Genre field text'
+  },
   scoreField: {
     id: 'scoreField',
     defaultMessage: 'Score',
@@ -75,6 +131,11 @@ export const messages = defineMessages({
     defaultMessage: 'Watched',
     description: 'Watched field text'
   },
+  linksField: {
+    id: 'linksField',
+    defaultMessage: 'Links',
+    description: 'Links field text'
+  },
   editMovie: {
     id: 'editMovie',
     defaultMessage: 'Edit Movie',
@@ -86,3 +147,8 @@ export const messages = defineMessages({
     description: 'Create Movie modal title'
   }
 })
+
+export const messages = {
+  ...common,
+  genres
+}
