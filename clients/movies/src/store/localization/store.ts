@@ -1,34 +1,33 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { enMessages, ruMessages } from '../../lang'
 
 import antdEn from 'antd/locale/en_US'
 import antdRu from 'antd/locale/ru_RU'
-
-const RU = 'ru-RU'
-const EN = 'en-US'
+import { supportedLanguages, SupportedLanguages } from '../../types/supportedLanguages'
 
 export const localeOptions = [
-  { value: EN, label: 'English' },
-  { value: RU, label: 'Русский' }
+  { value: SupportedLanguages.EN, label: 'English' },
+  { value: SupportedLanguages.RU, label: 'Русский' }
 ]
 
 const localeMap = {
-  [EN]: {
+  [SupportedLanguages.EN]: {
     antdMessages: antdEn,
     messages: enMessages
   },
-  [RU]: {
+  [SupportedLanguages.RU]: {
     antdMessages: antdRu,
     messages: ruMessages
   }
 }
 
 const LOCAL_STORAGE_LOCALE_KEY = 'locale'
-const lsLocale = localStorage.getItem(LOCAL_STORAGE_LOCALE_KEY)
-const systemLocale = Object.keys(localeMap).find(
+const lsLocale = localStorage.getItem(LOCAL_STORAGE_LOCALE_KEY) || ''
+const systemLocale = supportedLanguages.find(
   (locale) => navigator.language === locale || locale.includes(navigator.language)
 )
-const initialLocale = lsLocale || systemLocale || EN
+const initialLocale =
+  lsLocale in SupportedLanguages ? (lsLocale as SupportedLanguages) : systemLocale || SupportedLanguages.EN
 
 export const localizationSlice = createSlice({
   name: 'localization',
@@ -37,7 +36,7 @@ export const localizationSlice = createSlice({
     ...localeMap[initialLocale]
   },
   reducers: {
-    setLocale: (state, action) => {
+    setLocale: (state, action: PayloadAction<SupportedLanguages>) => {
       state.locale = action.payload
 
       const { messages, antdMessages } = localeMap[action.payload]

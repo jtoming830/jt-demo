@@ -7,21 +7,26 @@ module.exports = {
   globals: {
     nconf: true,
   },
-  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
-  parser: '@babel/eslint-parser',
-  plugins: ['react', 'react-hooks'],
+  extends: ['plugin:@typescript-eslint/eslint-recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['react', 'react-hooks', '@typescript-eslint/eslint-plugin'],
   settings: {
     react: {
       version: 'detect'
+    },
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx']
+    },
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true
+      }
     }
   },
+  root: true,
   parserOptions: {
-    ecmaVersion: 2020,
-    requireConfigFile: false,
-    sourceType: 'module',
-    babelOptions: {
-      presets: ["@babel/preset-react"]
-    }
+    project: 'tsconfig.json',
+    sourceType: 'module'
   },
   ignorePatterns: ['.git', '.eslintrc.js', 'coverage', 'build', 'public', 'node_modules'],
   rules: {
@@ -130,12 +135,12 @@ module.exports = {
     'no-catch-shadow': 2, // disallow the catch clause parameter name being the same as a variable in the outer scope (off by default in the node environment)
     'no-delete-var': 2, // disallow deletion of variables
     'no-label-var': 2, // disallow labels that share a name with a variable
-    'no-shadow': 2, // disallow declaration of variables already declared in the outer scope
+    '@typescript-eslint/no-shadow': 2,
     'no-shadow-restricted-names': 2, // disallow shadowing of names such as arguments
     'no-undef': 2, // disallow use of undeclared variables unless mentioned in a /*global */ block
     'no-undef-init': 2, // disallow use of undefined when initializing variables
     'no-undefined': 2, // disallow use of undefined variable (off by default)
-    'no-unused-vars': 'warn', // disallow declaration of variables that are not used in the code
+    '@typescript-eslint/no-unused-vars': 'warn', // disallow declaration of variables that are not used in the code
     'no-use-before-define': [2, { functions: false }], // disallow use of variables before they are defined
 
     //

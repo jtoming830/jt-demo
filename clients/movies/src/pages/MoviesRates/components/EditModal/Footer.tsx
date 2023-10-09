@@ -1,10 +1,11 @@
 import { Button, Form } from 'antd'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
 import { styled } from 'styled-components'
 import { createMovie, removeMovie, updateMovie } from '../../../../store/movies'
 import { useIntl } from 'react-intl'
 import { messages } from '../../../../messages'
+import { Movie } from '../../../../types/movie'
+import { useDispatch } from '../../../../store'
 
 const Container = styled.div`
   button + button {
@@ -15,14 +16,19 @@ const Container = styled.div`
   justify-content: space-between;
 `
 
-export function Footer({ movie, onClose }) {
+type FooterProps = {
+  movie: Movie | null
+  onClose: () => void
+}
+
+export function Footer({ movie, onClose }: FooterProps) {
   const dispatch = useDispatch()
   const intl = useIntl()
 
-  const [loading, setLoading] = useState()
-  const [deleteLoading, setDeleteLoading] = useState()
+  const [loading, setLoading] = useState(false)
+  const [deleteLoading, setDeleteLoading] = useState(false)
 
-  const form = Form.useFormInstance()
+  const form = Form.useFormInstance<Partial<Movie>>()
 
   return (
     <Container>

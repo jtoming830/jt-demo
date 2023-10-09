@@ -1,7 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { createMovie, getMovies, removeMovie, updateMovie } from './actions'
+import { Movie } from '../../types/movie'
 
-const initialState = {
+type State = {
+  data: Movie[]
+  loading: boolean
+  error: string | null | Error | boolean
+}
+
+const initialState: State = {
   data: [],
   loading: true,
   error: null
@@ -10,6 +17,7 @@ const initialState = {
 export const moviesSlice = createSlice({
   name: 'movies',
   initialState,
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getMovies.fulfilled, (state, action) => {
       state.data = action.payload

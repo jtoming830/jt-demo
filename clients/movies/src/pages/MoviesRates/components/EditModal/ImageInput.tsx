@@ -11,7 +11,12 @@ const Image = styled.img`
   display: block;
 `
 
-export function ImageInput({ value, onChange }) {
+type ImageInputProps = {
+  value?: string
+  onChange?: (value: string) => void
+}
+
+export function ImageInput({ value, onChange }: ImageInputProps) {
   const intl = useIntl()
 
   return (
@@ -23,7 +28,7 @@ export function ImageInput({ value, onChange }) {
       <Input
         placeholder={intl.formatMessage(messages.imageInputPlaceholder)}
         value={value}
-        onChange={(e) => onChange(e.target.value)}
+        onChange={(e) => onChange?.(e.target.value)}
       />
     </div>
   )

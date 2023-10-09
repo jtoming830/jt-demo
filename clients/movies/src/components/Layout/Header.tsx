@@ -4,6 +4,8 @@ import { styled } from 'styled-components'
 import { localeOptions, setLocale } from '../../store/localization'
 import { useIntl } from 'react-intl'
 import { messages } from '../../messages'
+import { RootState } from '../../store'
+import { SupportedLanguages } from '../../types/supportedLanguages'
 
 const { Header: AntdHeader } = Layout
 
@@ -26,7 +28,7 @@ const StyledSelect = styled(Select)`
 export function Header() {
   const intl = useIntl()
   const dispatch = useDispatch()
-  const locale = useSelector((state) => state.localization.locale)
+  const locale = useSelector((state: RootState) => state.localization.locale)
 
   return (
     <StyledHeader>
@@ -34,7 +36,7 @@ export function Header() {
       <StyledSelect
         options={localeOptions}
         value={locale}
-        onChange={(value) => dispatch(setLocale(value))}
+        onChange={(value: unknown) => dispatch(setLocale(value as SupportedLanguages))}
       />
     </StyledHeader>
   )

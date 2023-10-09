@@ -1,11 +1,13 @@
-import { useEffect, useMemo, useState } from 'react'
+import { ChangeEvent, useEffect, useMemo, useState } from 'react'
 import { EditModal, Table } from './components'
-import { useDispatch, useSelector } from 'react-redux'
-import { getMovies, moviesSelector } from '../../store/movies'
+import { useSelector } from 'react-redux'
+import { getMovies } from '../../store/movies'
 import { Button, Input } from 'antd'
 import styled from 'styled-components'
 import { useIntl } from 'react-intl'
 import { messages } from '../../messages'
+import { RootState, useDispatch } from '../../store'
+import { Movie } from '../../types/movie'
 
 const ToolPanel = styled.div`
   display: flex;
@@ -23,10 +25,10 @@ const SearchInput = styled(Input)`
 
 export default function MoviesRates() {
   const dispatch = useDispatch()
-  const { loading, data: movies } = useSelector(moviesSelector)
+  const { loading, data: movies } = useSelector((state: RootState) => state.movies)
 
   const [modalOpen, setModalOpen] = useState(false)
-  const [selectedMovie, setSelectedMovie] = useState()
+  const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null)
   const [searchValue, setSearchValue] = useState('')
 
   useEffect(() => {
@@ -52,7 +54,7 @@ export default function MoviesRates() {
       <ToolPanel>
         <SearchInput
           placeholder={intl.formatMessage(messages.searchPlaceholder)}
-          onChange={(e) => setSearchValue(e.target.value)}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchValue(e.target.value)}
         />
         <div>
           <Button onClick={() => setModalOpen(true)}>{intl.formatMessage(messages.add)}</Button>

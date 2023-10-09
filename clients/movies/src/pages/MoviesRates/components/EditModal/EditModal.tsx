@@ -2,10 +2,11 @@ import { Checkbox, Col, Form, Input, InputNumber, Modal, Row, Select } from 'ant
 import { Footer } from './Footer'
 import { ImageInput } from './ImageInput'
 import { useEffect } from 'react'
-import { useIntl } from 'react-intl'
+import { IntlShape, useIntl } from 'react-intl'
 import { messages } from '../../../../messages'
+import { Movie } from '../../../../types/movie'
 
-const getGenreOptions = (intl) =>
+const getGenreOptions = (intl: IntlShape) =>
   [
     'comedy',
     'horror',
@@ -21,7 +22,13 @@ const getGenreOptions = (intl) =>
     'mystery'
   ].map((value) => ({ value, label: intl.messages[value] }))
 
-export function EditModal({ open, onClose, movie }) {
+type EditModalProps = {
+  open: boolean
+  onClose: () => void
+  movie: Movie | null
+}
+
+export function EditModal({ open, onClose, movie }: EditModalProps) {
   const [form] = Form.useForm()
   const intl = useIntl()
 
@@ -71,10 +78,11 @@ export function EditModal({ open, onClose, movie }) {
                 <Form.Item
                   label={intl.formatMessage(messages.yearField)}
                   name="year"
-                  min={1900}
-                  max={2030}
                 >
-                  <InputNumber />
+                  <InputNumber
+                    min={1900}
+                    max={2030}
+                  />
                 </Form.Item>
               </Col>
               <Col offset={4}>
