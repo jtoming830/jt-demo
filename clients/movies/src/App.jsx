@@ -7,8 +7,6 @@ import { ConfigProvider } from 'antd'
 function App() {
   const { locale, messages, antMessages } = useSelector((state) => state.localization)
 
-  console.log(messages)
-
   return (
     <ConfigProvider locale={antMessages}>
       <IntlProvider
